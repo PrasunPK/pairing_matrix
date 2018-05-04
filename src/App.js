@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import TopAndLeft from "./TopAndLeft";
-import Main from "./Main";
+import MainContainer from "./container";
 
 class App extends Component {
     render() {
@@ -9,7 +9,7 @@ class App extends Component {
             <div className="App">
                 <div>
                     <TopAndLeft value="1"/>
-                    <Main/>
+                    <MainContainer/>
                 </div>
             </div>
         );

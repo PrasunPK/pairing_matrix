@@ -4,16 +4,25 @@ import Paper from "material-ui/Paper";
 
 import './App.css';
 import {names} from "./data";
+import IconButton from "material-ui/es/IconButton/IconButton";
 
 const Row = ({name, index}) => {
     return (
         <Grid container direction="row">
+
             {
                 names.map((value, i) => (
                     <Grid key={value} item>
                         <Paper style={{paddingTop: 20, paddingBottom: 9, height: 33, width: 80}}>
-                            {`${i} ${index}`}
+                            <div className="pair-value">
+                                {`${i} ${index}`}
+                            </div>
+                            <div className="fab-action-icons">
+                                <IconButton className="fab-action-button add-button"> + </IconButton>
+                                <IconButton className="fab-action-button minus-button"> - </IconButton>
+                            </div>
                         </Paper>
+
                     </Grid>
                 ))
             }

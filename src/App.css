@@ -36,3 +36,24 @@
     margin-left: 80px;
     position: absolute;
 }
+
+.MuiGrid-item-2 .pair-value {
+    margin-top: -8px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.MuiGrid-container-1 .fab-action-button {
+    height: 28px;
+    width: 28px;
+    font-size: 14px;
+}
+
+.MuiGrid-container-1 .add-button {
+    color: green;
+}
+
+.MuiGrid-container-1 .minus-button {
+    color: red;
+}
+

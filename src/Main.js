@@ -2,15 +2,15 @@ import React from 'react';
 import Grid from 'material-ui/Grid';
 
 import './App.css';
-import {members} from "./data";
+import members from "./data/members";
 import Row from "./Row";
 
 const Main = () => {
     return (
         <Grid container className="main-content">
             {
-                members.map((value, i) => (
-                    <Row name={value.name} index={i}/>
+                members.map((member) => (
+                    <Row rowMember={member} />
                 ))
             }
         </Grid>

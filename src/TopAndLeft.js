@@ -3,14 +3,14 @@ import Grid from 'material-ui/Grid';
 import Paper from "material-ui/Paper";
 
 import './App.css';
-import {members} from "./data";
+import members from "./data/members";
 
 const TopAndLeft = () => {
     return (
         <Grid container>
             <Grid container direction="row">
                 {[{name: 'PI 29'}].concat(members).map(value => (
-                    <Grid key={value} item>
+                    <Grid item>
                         <Paper style={{paddingTop: 25, paddingBottom: 10, height: 35, width: 80}}>
                             {value.name}
                         </Paper>
@@ -19,7 +19,7 @@ const TopAndLeft = () => {
             </Grid>
             <Grid container direction="column">
                 {members.map(value => (
-                    <Grid key={value} item>
+                    <Grid item>
                         <Paper style={{paddingTop: 20, paddingBottom: 9, height: 33, width: 80}}>
                             {value.name}
                         </Paper>

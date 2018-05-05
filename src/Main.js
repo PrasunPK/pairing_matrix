@@ -9,8 +9,8 @@ const Main = ({handleAddClick, count}) => {
     return (
         <Grid container className="main-content">
             {
-                members.map((member) => (
-                    <Row count={count} rowMember={member} handleAddClick={handleAddClick}/>
+                members.map((member, pIndex) => (
+                    <Row count={count} pIndex={pIndex} rowMember={member} handleAddClick={handleAddClick}/>
                 ))
             }
         </Grid>

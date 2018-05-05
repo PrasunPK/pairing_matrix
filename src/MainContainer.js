@@ -17,14 +17,14 @@ export const defaultState = () => {
     }
 };
 
-const mapStateToProps = (state = defaultState(), ownProps) => {
+const mapStateToProps = (state = defaultState()) => {
     saveStateTemporarily(state);
     return {
         ...state
     }
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         handleAddClick: (e) => {
             let pairNumber = e.currentTarget.id.replace('_add', '');

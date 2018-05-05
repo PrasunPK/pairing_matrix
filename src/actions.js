@@ -49,7 +49,6 @@ export const saveStateOfPairs = () => {
     let date = new Date();
     return getTemporarySavedState()
         .then((res) => {
-            console.log(res);
             axios
                 .post('http://localhost:3001/collections',
                     {[date.getTime().toString()]: res.data.pairs})

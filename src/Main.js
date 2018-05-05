@@ -6,6 +6,11 @@ import members from "./data/members";
 import Row from "./Row";
 
 class Main extends React.Component {
+    componentWillMount() {
+        const { fetchLatestState } = this.props;
+        fetchLatestState();
+    }
+
     render() {
         const {handleAddClick, handleMinusClick, pairs} = this.props;
         return (

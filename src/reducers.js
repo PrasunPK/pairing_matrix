@@ -1,4 +1,4 @@
-import {defaultState} from "./container";
+import {defaultState} from "./MainContainer";
 
 const mainReducer = (state = defaultState(), action) => {
     switch (action.type) {
@@ -16,6 +16,12 @@ const mainReducer = (state = defaultState(), action) => {
             return {
                 ...state,
                 count: state.count > 0 ? state.count - action.count : 0
+            };
+
+        case 'FETCH_SUCCESSFUL':
+            return {
+                ...state,
+                pairs: action.pairs
             };
 
         default:

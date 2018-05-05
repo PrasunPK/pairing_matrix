@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import Main from "./Main";
-import {dayDecreased, dayIncreased} from "./actions";
+import {dayDecreased, dayIncreased, getLatestSavedState} from "./actions";
 import members from "./data/members";
 
 export const defaultState = () => {
@@ -33,6 +33,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         handleMinusClick: (e) => {
             let pairNumber = e.currentTarget.id.replace('_minus', '');
             dayDecreased(dispatch, pairNumber);
+        },
+
+        fetchLatestState: () => {
+            getLatestSavedState(dispatch);
         }
     }
 };

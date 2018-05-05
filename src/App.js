@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import './App.css';
 import TopAndLeft from "./TopAndLeft";
-import MainContainer from "./container";
-import LeftNavigation from "./LeftNavigation";
+import MainContainer from "./MainContainer";
+import LeftNavigationContainer from "./LeftNavigationContainer";
 
 class App extends Component {
     render() {
         return (
             <div className="App">
                 <div className="left-section">
-                    <LeftNavigation/>
+                    <LeftNavigationContainer/>
                 </div>
                 <div className="right-section">
                     <TopAndLeft/>

@@ -2,25 +2,24 @@ import {connect} from "react-redux";
 import Main from "./Main";
 import {dayIncreased} from "./actions";
 
-const defaultState = () => {
+export const defaultState = () => {
     return {
         count: 0
     }
 };
 
 const mapStateToProps = (state = defaultState(), ownProps) => {
-    console.log('STATE ===> ', state );
+    console.log('STATE ===> in container', state);
     return {
-        ...state,
-        count: state.count || 0
+        ...state
     }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        handleAddClick: () => {
-            console.log("On Add click");
-            dayIncreased(dispatch);
+        handleAddClick: (e) => {
+            let pairNumber = e.currentTarget.id.replace('_add', '');
+            dayIncreased(dispatch, pairNumber, 1);
         }
     }
 };

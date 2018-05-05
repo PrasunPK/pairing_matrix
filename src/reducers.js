@@ -1,7 +1,8 @@
-const mainReducer = (state = [], action) => {
+import {defaultState} from "./container";
+
+const mainReducer = (state = defaultState(), action) => {
     switch (action.type) {
         case 'DAY_INCREASED':
-            console.log('ACTION' , action);
             return {
                 ...state,
                 count: action.count
@@ -9,7 +10,7 @@ const mainReducer = (state = [], action) => {
         default:
             return {
                 ...state
-            };
+            } ;
     }
 };
 

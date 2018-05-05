@@ -1,6 +1,7 @@
-export const dayIncreased = (dispatch) => {
+export const dayIncreased = (dispatch, pair, count) => {
     dispatch({
         type: 'DAY_INCREASED',
-        count: 1
+        pair,
+        count
     });
 };

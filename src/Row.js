@@ -5,13 +5,13 @@ import './App.css';
 import members from "./data/members";
 import Cell from "./Cell";
 
-const Row = ({rowMember, handleAddClick, count, pIndex}) => {
+const Row = ({rowMember, handleAddClick, pIndex, pairs}) => {
     return (
         <Grid container direction="row">
             {
                 members.map((member, cIndex) => (
                     <Cell rowMember={rowMember} member={member}
-                          handleAddClick={handleAddClick} count={count}
+                          handleAddClick={handleAddClick} count={pairs[`${rowMember.id}_${member.id}`]}
                           pIndex={pIndex} cIndex={cIndex}/>
                 ))
             }

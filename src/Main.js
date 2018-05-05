@@ -7,13 +7,15 @@ import Row from "./Row";
 
 class Main extends React.Component {
     render() {
-        const {handleAddClick, pairs} = this.props;
+        const {handleAddClick, handleMinusClick, pairs} = this.props;
         return (
             <Grid container className="main-content">
                 {
                     members.map((member, pIndex) => (
                         <Row pairs={pairs} pIndex={pIndex}
-                             rowMember={member} handleAddClick={handleAddClick}/>
+                             rowMember={member}
+                             handleAddClick={handleAddClick}
+                             handleMinusClick={handleMinusClick}/>
                     ))
                 }
             </Grid>

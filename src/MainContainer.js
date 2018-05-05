@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import Main from "./Main";
-import {dayDecreased, dayIncreased, getLatestSavedState} from "./actions";
+import {dayDecreased, dayIncreased, getLatestSavedState, saveStateTemporarily} from "./actions";
 import members from "./data/members";
 
 export const defaultState = () => {
@@ -18,6 +18,7 @@ export const defaultState = () => {
 };
 
 const mapStateToProps = (state = defaultState(), ownProps) => {
+    saveStateTemporarily(state);
     return {
         ...state
     }

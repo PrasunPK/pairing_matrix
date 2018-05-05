@@ -21,7 +21,7 @@ const mainReducer = (state = defaultState(), action) => {
         case 'FETCH_SUCCESSFUL':
             return {
                 ...state,
-                pairs: action.pairs
+                pairs: action.pairs || state.pairs
             };
 
         default:

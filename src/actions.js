@@ -17,29 +17,46 @@ export const dayDecreased = (dispatch, pair) => {
 };
 
 export const fetchSuccessful = (dispatch, data) => {
-    console.log(Object.values(data[data.length-1])[0]);
     dispatch({
         type: 'FETCH_SUCCESSFUL',
-        pairs: Object.values(data[data.length-1])[0]
+        pairs: data.length > 0 && Object.values(data[data.length - 1])[0]
     });
 };
 
 export const getLatestSavedState = (dispatch) => {
     axios.get('http://localhost:3001/collections')
         .then((res) => {
-            console.log(res.data);
             fetchSuccessful(dispatch, res.data)
         })
 };
 
-export const saveStateOfPairs = ({pairs}) => {
-    let date = new Date();
+export const saveStateTemporarily = ({pairs}) => {
     return axios
-        .post('http://localhost:3001/collections',
-            {[date.getTime().toString()]: pairs})
+        .put('http://localhost:3001/temp_collection',
+            {pairs})
         .then((res) => {
         })
         .catch((err) => {
             console.log(err);
         });
+};
+
+const getTemporarySavedState = () => {
+    return axios.get('http://localhost:3001/temp_collection');
+};
+
+export const saveStateOfPairs = () => {
+    let date = new Date();
+    return getTemporarySavedState()
+        .then((res) => {
+            console.log(res);
+            axios
+                .post('http://localhost:3001/collections',
+                    {[date.getTime().toString()]: res.data.pairs})
+                .then((res) => {
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        })
 };

@@ -2,6 +2,7 @@
     text-align: center;
     display: flex;
     margin-top: 0.5rem;
+    overflow: scroll;
 }
 
 .main-content {
@@ -40,12 +41,12 @@
 }
 
 .left-section {
-    width: 35%;
+    width: 25%;
     text-align: center;
 }
 
 .right-section {
-
+    width: 100%;
 }
 
 .left-section .large-avatar {

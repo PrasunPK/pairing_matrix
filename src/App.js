@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
-import TopAndLeft from "./TopAndLeft";
-import MainContainer from "./matrix/MainContainer";
 import LeftNavigationContainer from "./left-navigation/LeftNavigationContainer";
+import {Route, Switch} from "react-router-dom";
+import Matrix from "./matrix/Matrix";
 
 class App extends Component {
     render() {
@@ -12,8 +12,11 @@ class App extends Component {
                     <LeftNavigationContainer/>
                 </div>
                 <div className="right-section">
-                    <TopAndLeft/>
-                    <MainContainer/>
+                    <main>
+                        <Switch>
+                            <Route exact path='/matrix' component={Matrix}/>
+                        </Switch>
+                    </main>
                 </div>
             </div>
         );

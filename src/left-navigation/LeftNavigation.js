@@ -6,7 +6,7 @@ import CardActions from "material-ui/es/Card/CardActions";
 import Avatar from "material-ui/es/Avatar/Avatar";
 import Button from "material-ui/es/Button/Button";
 
-const LeftNavigation = ({handleSaveClick}) => {
+const LeftNavigation = ({}) => {
     return (
         <Card className="left-menu-section">
             <CardContent>
@@ -21,9 +21,7 @@ const LeftNavigation = ({handleSaveClick}) => {
                 </div>
             </CardContent>
             <CardActions>
-                <Button className="right" variant="raised" color="primary" onClick={handleSaveClick}>
-                    Save State
-                </Button>
+                {/*no Action*/}
             </CardActions>
         </Card>
     );

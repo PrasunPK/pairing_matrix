@@ -39,22 +39,3 @@ export const savePairData = (pair, dispatch, type) => {
             console.log(err);
         });
 };
-
-const getTemporarySavedState = () => {
-    return axios.get('http://localhost:3001/temp_collection');
-};
-
-export const saveStateOfPairs = () => {
-    let date = new Date();
-    return getTemporarySavedState()
-        .then((res) => {
-            axios
-                .post('http://localhost:3001/collections',
-                    {[date.getTime().toString()]: res.data.pairs})
-                .then((res) => {
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        })
-};

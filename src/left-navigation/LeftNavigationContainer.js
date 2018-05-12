@@ -1,6 +1,5 @@
 import {connect} from "react-redux";
 import LeftNavigation from "./LeftNavigation";
-import {saveStateOfPairs} from "../action/actions";
 
 const mapStateToProps = (state = {}) => {
     return {
@@ -10,9 +9,6 @@ const mapStateToProps = (state = {}) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        handleSaveClick: () => {
-            saveStateOfPairs();
-        }
     }
 };
 

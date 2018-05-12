@@ -18,8 +18,8 @@ const mapStateToProps = (state = defaultState()) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         handleAddClick: (e) => {
-            let pairNumber = e.currentTarget.id.replace('_add', '');
-            dayIncreased(dispatch, pairNumber);
+            let pair = e.currentTarget.id.replace('_add', '').split('_');
+            dayIncreased(dispatch, {'pair1': pair[0], 'pair2': pair[1], 'days': 1});
         },
 
         handleMinusClick: (e) => {

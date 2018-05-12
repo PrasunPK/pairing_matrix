@@ -8,7 +8,6 @@ const findAndUpdatePair = (state, pair) => {
     }
     state.pairs.forEach(p => {
         if (isSamePair(p, pair)) {
-            console.log(p);
             p.days += pair.days;
         }
     });
@@ -24,12 +23,10 @@ const mainReducer = (state = defaultState(), action) => {
             };
 
         case 'DAY_DECREASED':
-            state.pairs[action.pair] =
-                state.pairs[action.pair] > 0 ?
-                    state.pairs[action.pair] - action.count : 0;
+            findAndUpdatePair(state, action.pair);
             return {
                 ...state,
-                count: state.count > 0 ? state.count - action.count : 0
+                count: state.count - action.count
             };
 
         case 'FETCH_SUCCESSFUL':

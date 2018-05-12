@@ -9,7 +9,7 @@ const Cell = ({rowMember, member, handleAddClick, handleMinusClick, count, pInde
                 {cIndex <= pIndex ?
                     <div>
                         <div className="pair-value" id={`${rowMember.id}_${member.id}_value`}>
-                            {count}
+                            {count > 0 ? count : 0}
                         </div>
                         <div className="fab-action-icons">
                             <IconButton className="fab-action-button add-button"

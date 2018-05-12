@@ -1,15 +1,11 @@
 import axios from 'axios';
 
 export const dayIncreased = (dispatch, pair) => {
-    savePairData(pair, dispatch);
+    savePairData(pair, dispatch, 'DAY_INCREASED');
 };
 
 export const dayDecreased = (dispatch, pair) => {
-    dispatch({
-        type: 'DAY_DECREASED',
-        pair,
-        count: 1
-    });
+    savePairData(pair, dispatch, 'DAY_DECREASED');
 };
 
 export const fetchSuccessful = (dispatch, data) => {
@@ -26,14 +22,14 @@ export const getLatestSavedState = (dispatch) => {
         })
 };
 
-export const savePairData = (pair, dispatch) => {
+export const savePairData = (pair, dispatch, type) => {
     return axios
         .post('http://localhost:8080/pairingMatrix/save',
             {pairs: [pair]})
         .then((res) => {
             if (res.status === 200) {
                 return dispatch({
-                    type: 'DAY_INCREASED',
+                    type: type,
                     pair,
                     count: 1
                 });

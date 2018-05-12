@@ -23,8 +23,8 @@ const mapDispatchToProps = (dispatch) => {
         },
 
         handleMinusClick: (e) => {
-            let pairNumber = e.currentTarget.id.replace('_minus', '');
-            dayDecreased(dispatch, pairNumber);
+            let pair = e.currentTarget.id.replace('_minus', '').split('_');
+            dayDecreased(dispatch, {'pair1': pair[0], 'pair2': pair[1], 'days': -1});
         },
 
         fetchLatestState: () => {

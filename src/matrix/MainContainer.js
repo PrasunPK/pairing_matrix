@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import Main from "./Main";
-import {dayDecreased, dayIncreased, getLatestSavedState} from "./actions";
+import {dayDecreased, dayIncreased, getLatestSavedState} from "../action/actions";
 
 export const defaultState = () => {
     return {

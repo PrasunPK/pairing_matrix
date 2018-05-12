@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import TopAndLeft from "./TopAndLeft";
-import MainContainer from "./MainContainer";
-import LeftNavigationContainer from "./LeftNavigationContainer";
+import MainContainer from "./matrix/MainContainer";
+import LeftNavigationContainer from "./left-navigation/LeftNavigationContainer";
 
 class App extends Component {
     render() {

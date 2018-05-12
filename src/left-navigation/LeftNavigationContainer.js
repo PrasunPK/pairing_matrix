@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import LeftNavigation from "./LeftNavigation";
-import {saveStateOfPairs} from "./actions";
+import {saveStateOfPairs} from "../action/actions";
 
 const mapStateToProps = (state = {}) => {
     return {

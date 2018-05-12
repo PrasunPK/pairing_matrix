@@ -1,5 +1,5 @@
-import {defaultState} from "./MainContainer";
-import {isSamePair} from "./utils";
+import {defaultState} from "../matrix/MainContainer";
+import {isSamePair} from "../utils";
 
 const findAndUpdatePair = (state, pair) => {
     if (!state.pairs.some(p => isSamePair(p, pair))) {

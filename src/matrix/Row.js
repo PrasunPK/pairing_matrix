@@ -1,8 +1,8 @@
 import React from 'react';
 import Grid from 'material-ui/Grid';
 
-import './App.css';
-import members from "./data/members";
+import '../App.css';
+import members from "../data/members";
 import Cell from "./Cell";
 
 const getDaysCount = (pMember, cMember, pairs) => {

@@ -9,7 +9,7 @@ const TopAndLeft = () => {
     return (
         <Grid container>
             <Grid container direction="row">
-                {[{name: 'PI 29'}].concat(members).map(value => (
+                {[{name: 'PI 29', id:9}].concat(members).map(value => (
                     <Grid item>
                         <Paper style={{paddingTop: 25, paddingBottom: 10, height: 35, width: 80}}>
                             {value.name}

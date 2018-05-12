@@ -19,12 +19,12 @@ export const dayDecreased = (dispatch, pair) => {
 export const fetchSuccessful = (dispatch, data) => {
     dispatch({
         type: 'FETCH_SUCCESSFUL',
-        pairs: data.length > 0 && Object.values(data[data.length - 1])[0]
+        pairs: data
     });
 };
 
 export const getLatestSavedState = (dispatch) => {
-    axios.get('http://localhost:3001/collections')
+    axios.get('http://localhost:8080/pairingMatrix/getAll')
         .then((res) => {
             fetchSuccessful(dispatch, res.data)
         })

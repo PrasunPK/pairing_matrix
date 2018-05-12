@@ -6,7 +6,8 @@
 }
 
 .main-content {
-    margin-top: -682px;
+    margin-top: -558px;
+    z-index: 9;
     margin-left: 80px;
     position: absolute;
 }

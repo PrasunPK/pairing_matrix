@@ -1,24 +1,15 @@
 import {connect} from "react-redux";
 import Main from "./Main";
-import {dayDecreased, dayIncreased, getLatestSavedState, saveStateTemporarily} from "./actions";
-import members from "./data/members";
+import {dayDecreased, dayIncreased, getLatestSavedState} from "./actions";
 
 export const defaultState = () => {
-    let pairs = {};
-    members.forEach((pMember, pIndex) => {
-        members.forEach((cMember, cIndex) => {
-            if (cIndex <= pIndex)
-                pairs[`${pMember.id}_${cMember.id}`] = 0
-        });
-    });
     return {
-        pairs,
+        pairs: null,
         count: 0
     }
 };
 
 const mapStateToProps = (state = defaultState()) => {
-    saveStateTemporarily(state);
     return {
         ...state
     }

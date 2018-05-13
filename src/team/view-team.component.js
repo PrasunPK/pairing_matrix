@@ -1,5 +1,6 @@
 import React from "react";
 import Typography from "material-ui/es/Typography/Typography";
+import TeamMembers from "./team-members.component";
 
 const ViewTeam = ({team}) => {
     return (
@@ -10,6 +11,7 @@ const ViewTeam = ({team}) => {
             <Typography variant="subheading">
                 {team && team.teamEmail}
             </Typography>
+            <TeamMembers/>
         </div>
     )
 };

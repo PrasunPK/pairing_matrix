@@ -1,14 +1,17 @@
 import {connect} from "react-redux";
 import TeamComponent from './team.component';
-import {saveTeamDetail} from "./team.actions";
+import * as actions from "./team.actions";
 
 export const defaultState = () => {
-    return {}
+    return {
+        team: null
+    }
 };
 
 const mapStateToProps = (state = defaultState()) => {
     return {
-        ...state
+        ...state,
+        team: state.team
     }
 };
 
@@ -20,7 +23,10 @@ const mapDispatchToProps = (dispatch) => {
             const adminUserName = document.getElementById('input-with-team-admin').value;
             const adminPassword = document.getElementById('input-with-password').value;
 
-            saveTeamDetail(dispatch, {teamName, teamEmail, adminUserName, adminPassword});
+            actions.saveTeamDetail(dispatch, {teamName, teamEmail, adminUserName, adminPassword});
+        },
+        fetchTeamInformation: () => {
+            actions.getTeamInformation(dispatch);
         },
         handleChange: (e) => {
             //noop

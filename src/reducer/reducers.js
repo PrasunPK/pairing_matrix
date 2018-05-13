@@ -13,7 +13,7 @@ const findAndUpdatePair = (state, pair) => {
     });
 };
 
-const matrixReducers =  (state = defaultState(), action) => {
+const matrixReducers = (state = defaultState(), action) => {
     switch (action.type) {
         case 'DAY_INCREASED':
             findAndUpdatePair(state, action.pair);
@@ -41,6 +41,11 @@ const matrixReducers =  (state = defaultState(), action) => {
                 team: action.team || state.team
             };
 
+        case 'SAVE_TEAM_MEMBER_DETAIL':
+            return {
+                ...state,
+                team: action.members
+            };
 
         default:
             return {

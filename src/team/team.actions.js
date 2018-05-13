@@ -1,6 +1,22 @@
 import axios from 'axios';
 import cookie from 'react-cookies';
 
+const saveTeamMemberDetail = (members) => ({
+    type: 'SAVE_TEAM_MEMBER_DETAIL',
+    members: members
+});
+
+export const getTeamMembers = (dispatch) => {
+    return axios
+        .post('http://localhost:8080/getAllMembers', {emailId: cookie.load('teamEmail')})
+        .then((res) => {
+            console.log(res.data);
+            dispatch(saveTeamMemberDetail(res.data));
+        })
+        .catch(err => console.log(err));
+};
+
+
 const teamDetailSaved = (team) => ({
     type: 'SAVE_TEAM_DETAIL',
     team: team

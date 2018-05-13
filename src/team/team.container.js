@@ -27,6 +27,7 @@ const mapDispatchToProps = (dispatch) => {
         },
         fetchTeamInformation: () => {
             actions.getTeamInformation(dispatch);
+            actions.getTeamMembers(dispatch);
         },
         handleChange: (e) => {
             //noop

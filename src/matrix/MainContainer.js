@@ -5,7 +5,8 @@ import {dayDecreased, dayIncreased, getLatestSavedState} from "../action/actions
 export const defaultState = () => {
     return {
         pairs: null,
-        count: 0
+        count: 0,
+        team: null
     }
 };
 

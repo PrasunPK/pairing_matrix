@@ -10,7 +10,6 @@ export const getTeamMembers = (dispatch) => {
     return axios
         .post('http://localhost:8080/getAllMembers', {emailId: cookie.load('teamEmail')})
         .then((res) => {
-            console.log(res.data);
             dispatch(saveTeamMemberDetail(res.data));
         })
         .catch(err => console.log(err));

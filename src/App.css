@@ -52,3 +52,12 @@
 .viewTeamDetail {
     text-align: left;
 }
+
+.teamInfo, .addMember {
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+}
+
+.addMemberBlock {
+    padding-left: 1rem;
+}

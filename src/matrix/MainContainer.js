@@ -6,7 +6,8 @@ export const defaultState = () => {
     return {
         pairs: null,
         count: 0,
-        team: null
+        team: null,
+        selectedTeam: []
     }
 };
 

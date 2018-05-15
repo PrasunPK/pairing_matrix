@@ -1,13 +1,7 @@
 import {connect} from "react-redux";
 import TeamComponent from './team.component';
 import * as actions from "./team.actions";
-
-export const defaultState = () => {
-    return {
-        team: null,
-        selectedTeam: null
-    }
-};
+import {defaultState} from "../matrix/MainContainer";
 
 const mapStateToProps = (state = defaultState()) => {
     return {

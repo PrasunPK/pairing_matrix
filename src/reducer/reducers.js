@@ -56,7 +56,7 @@ const matrixReducers = (state = defaultState(), action) => {
         case 'TEAM_VALUE_CHANGE':
             return {
                 ...state,
-                selectedTeam: action.selectedTeam
+                selectedTeam: action.selectedTeam || state.selectedTeam
             };
 
         default:

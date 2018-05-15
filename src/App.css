@@ -49,6 +49,10 @@
     margin-left: 16.5rem;
 }
 
+.allTeamDetail > .saveInfoButton {
+    margin-left: 2rem;
+}
+
 .viewTeamDetail {
     text-align: left;
 }
@@ -60,4 +64,17 @@
 
 .addMemberBlock {
     padding-left: 1rem;
+}
+
+.editTeamBlock {
+    margin-top: 2rem;
+}
+
+.allTeamDetail {
+    text-align: left;
+    padding: 1.5rem;
+}
+
+.selectExistingTeam {
+    width: 10rem;
 }

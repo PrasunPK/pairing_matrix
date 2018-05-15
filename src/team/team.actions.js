@@ -6,6 +6,11 @@ const saveTeamMemberDetail = (members) => ({
     members: members
 });
 
+const allTeamDetail = (teams) => ({
+    type: 'ALL_TEAM_DETAIL',
+    teams: teams
+});
+
 export const getTeamMembers = (dispatch) => {
     return axios
         .post('http://localhost:8080/getAllMembers', {emailId: cookie.load('teamEmail')})
@@ -34,12 +39,12 @@ export const saveTeamDetail = (dispatch, team) => {
         .catch((err) => {
             console.log(err);
         });
-
 };
 
 export const getTeamInformation = (dispatch) => {
     return axios.get('http://localhost:8080/team/getAll')
         .then((res) => {
+            dispatch(allTeamDetail(res.data.teams));
             const team = res.data.teams.filter(t => t.teamEmail === cookie.load('teamEmail'))[0];
             dispatch(teamDetailSaved(team));
         })

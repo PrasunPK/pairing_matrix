@@ -9,10 +9,11 @@ class TeamComponent extends React.Component {
     }
 
     render() {
-        const {handleChange, handleSaveClick, team} = this.props;
+        const {handleChange, handleSaveClick, teams, team, selectedTeam} = this.props;
         let view = null;
         if (!team) {
-            view = <EditTeam handleSaveClick={handleSaveClick} handleChange={handleChange}/>;
+            view = <EditTeam handleSaveClick={handleSaveClick} handleChange={handleChange} teams={teams}
+                             selectedTeam={selectedTeam}/>;
         } else {
             view = <ViewTeam team={team}/>;
         }

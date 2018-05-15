@@ -47,6 +47,18 @@ const matrixReducers = (state = defaultState(), action) => {
                 members: action.members
             };
 
+        case 'ALL_TEAM_DETAIL':
+            return {
+                ...state,
+                teams: action.teams
+            };
+
+        case 'TEAM_VALUE_CHANGE':
+            return {
+                ...state,
+                selectedTeam: action.selectedTeam
+            };
+
         default:
             return {
                 ...state

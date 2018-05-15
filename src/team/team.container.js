@@ -4,14 +4,17 @@ import * as actions from "./team.actions";
 
 export const defaultState = () => {
     return {
-        team: null
+        team: null,
+        selectedTeam: null
     }
 };
 
 const mapStateToProps = (state = defaultState()) => {
     return {
         ...state,
-        team: state.team
+        team: state.team,
+        teams: state.teams,
+        selectedTeam: state.selectedTeam
     }
 };
 
@@ -30,7 +33,10 @@ const mapDispatchToProps = (dispatch) => {
             actions.getTeamMembers(dispatch);
         },
         handleChange: (e) => {
-            //noop
+            dispatch({
+                type: 'TEAM_VALUE_CHANGE',
+                selectedTeam: e.target.value
+            });
         }
     }
 };

@@ -41,12 +41,13 @@ export const saveTeamDetail = (dispatch, team) => {
         });
 };
 
-export const getTeamInformation = (dispatch) => {
+export const getTeamInformation = (dispatch, teamEmail = cookie.load('teamEmail')) => {
     return axios.get('http://localhost:8080/team/getAll')
         .then((res) => {
             dispatch(allTeamDetail(res.data.teams));
-            const team = res.data.teams.filter(t => t.teamEmail === cookie.load('teamEmail'))[0];
+            const team = res.data.teams.filter(t => t.teamEmail === teamEmail)[0];
             dispatch(teamDetailSaved(team));
+            cookie.save('teamEmail', team.teamEmail);
         })
         .catch((err) => {
             console.log(err);

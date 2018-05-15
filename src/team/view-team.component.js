@@ -8,7 +8,7 @@ import Paper from "material-ui/es/Paper/Paper";
 const ViewTeam = ({team}) => {
     return (
         <div className="viewTeamDetail">
-            <Grid container spacing={36} direction="row">
+            <Grid container spacing={24} direction="row">
                 <Grid item>
                     <Grid>
                         <Paper className="teamInfo">

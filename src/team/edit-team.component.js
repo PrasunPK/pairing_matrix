@@ -9,10 +9,11 @@ import Button from "material-ui/es/Button/Button";
 import Save from "@material-ui/icons/es/Save";
 import ChooseFromExisting from "./chooseFromExisting.component"
 
-const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam}) => {
+const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam, handleExistingSave}) => {
     return (
         <Grid container direction="column">
-            <ChooseFromExisting teams={teams} selectedTeam={selectedTeam} handleChange={handleChange}/>
+            <ChooseFromExisting teams={teams} selectedTeam={selectedTeam} handleChange={handleChange}
+                                handleExistingSave={handleExistingSave}/>
             <Grid className="editTeamBlock">
                 <Paper className="allTeamDetail">
                     <Typography variant="subheading" component="label">

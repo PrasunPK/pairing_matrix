@@ -15,7 +15,7 @@ const MenuProps = {
 
 class MultipleSelect extends React.Component {
     render() {
-        const {teams, selectedTeam, handleChange} = this.props;
+        const {teams, selectedTeam, handleChange, handleExistingSave} = this.props;
 
         return (
             <Grid className="existingTeams">
@@ -30,6 +30,7 @@ class MultipleSelect extends React.Component {
                             value={selectedTeam}
                             onChange={handleChange}
                             MenuProps={MenuProps}
+                            id="selected-preferred-team"
                         >
                             {teams && teams.map(team => (
                                 <MenuItem
@@ -42,8 +43,7 @@ class MultipleSelect extends React.Component {
                         </Select>
                     </FormControl>
                     <Button className="saveInfoButton" color="primary" variant="raised" size="medium"
-                            id="save-team-detail-button" onClick={() => {
-                    }}>
+                            id="save-team-detail-button" onClick={handleExistingSave}>
                         <Save/>
                         Save
                     </Button>

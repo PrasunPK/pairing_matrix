@@ -31,6 +31,10 @@ const mapDispatchToProps = (dispatch) => {
                 type: 'TEAM_VALUE_CHANGE',
                 selectedTeam: e.target.value
             });
+        },
+        handleExistingSave: () => {
+            const selectedTeamEmail = document.getElementById('selected-preferred-team').value;
+            actions.getTeamInformation(dispatch, selectedTeamEmail);
         }
     }
 };

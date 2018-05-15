@@ -2,13 +2,15 @@ import {connect} from "react-redux";
 import TeamComponent from './team.component';
 import * as actions from "./team.actions";
 import {defaultState} from "../matrix/MainContainer";
+import cookie from 'react-cookies';
 
 const mapStateToProps = (state = defaultState()) => {
     return {
         ...state,
         team: state.team,
         teams: state.teams,
-        selectedTeam: state.selectedTeam
+        selectedTeam: state.selectedTeam,
+        members: state.members
     }
 };
 
@@ -35,6 +37,18 @@ const mapDispatchToProps = (dispatch) => {
         handleExistingSave: () => {
             const selectedTeamEmail = document.getElementById('selected-preferred-team').value;
             actions.getTeamInformation(dispatch, selectedTeamEmail);
+        },
+        handleAddMemberClick: () => {
+            console.log('add member clicked');
+            const data = {
+                memberName: document.getElementById("input-with-name").value,
+                memberEmail: document.getElementById("input-with-email").value,
+                teamEmail: cookie.load('teamEmail'),
+                adminUserName: document.getElementById('input-with-team-admin').value,
+                adminPassword: document.getElementById('input-with-password').value
+            };
+
+            actions.addTeamMember(dispatch, data);
         }
     }
 };

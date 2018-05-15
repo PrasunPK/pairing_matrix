@@ -5,9 +5,8 @@ import TableRow from "material-ui/es/Table/TableRow";
 import React from "react";
 import TableCell from "material-ui/es/Table/TableCell";
 import TableBody from "material-ui/es/Table/TableBody";
-import members from '../data/members';
 
-const TeamMembers = () => {
+const TeamMembers = ({members}) => {
     return (
         <Paper className="">
             <Table className="">
@@ -20,14 +19,14 @@ const TeamMembers = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {members.map(n => {
+                    {members && members.map((member, index) => {
                         return (
-                            <TableRow key={n.id}>
+                            <TableRow key={index}>
                                 <TableCell component="th" scope="row">
-                                    {n.name}
+                                    {member.memberName}
                                 </TableCell>
-                                <TableCell>{n.id}</TableCell>
-                                <TableCell>{n.email}</TableCell>
+                                <TableCell>{index}</TableCell>
+                                <TableCell>{member.memberEmail}</TableCell>
                                 <TableCell>{'Yes'}</TableCell>
                             </TableRow>
                         );

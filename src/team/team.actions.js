@@ -1,6 +1,20 @@
 import axios from 'axios';
 import cookie from 'react-cookies';
 
+export const addTeamMember = (dispatch, data) => {
+    return axios
+        .post('http://localhost:8080/addMember', data)
+        .then((res) => {
+            if (res.status === 200) {
+                getTeamMembers(dispatch);
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
+
+
 const saveTeamMemberDetail = (members) => ({
     type: 'SAVE_TEAM_MEMBER_DETAIL',
     members: members

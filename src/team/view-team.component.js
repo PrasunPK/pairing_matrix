@@ -5,7 +5,7 @@ import AddMember from "./add-member.component";
 import Grid from "material-ui/es/Grid/Grid";
 import Paper from "material-ui/es/Paper/Paper";
 
-const ViewTeam = ({team}) => {
+const ViewTeam = ({team, members, handleAddMemberClick}) => {
     return (
         <div className="viewTeamDetail">
             <Grid container spacing={24} direction="row">
@@ -21,11 +21,11 @@ const ViewTeam = ({team}) => {
                         </Paper>
                     </Grid>
                     <Grid>
-                        <TeamMembers/>
+                        <TeamMembers members={members}/>
                     </Grid>
                 </Grid>
                 <Grid item xs className="addMemberBlock">
-                    <AddMember/>
+                    <AddMember teamName={team && team.teamName} handleAddMemberClick={handleAddMemberClick}/>
                 </Grid>
             </Grid>
         </div>

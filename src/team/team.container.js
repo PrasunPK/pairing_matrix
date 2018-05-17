@@ -39,7 +39,6 @@ const mapDispatchToProps = (dispatch) => {
             actions.getTeamInformation(dispatch, selectedTeamEmail);
         },
         handleAddMemberClick: () => {
-            console.log('add member clicked');
             const data = {
                 memberName: document.getElementById("input-with-name").value,
                 memberEmail: document.getElementById("input-with-email").value,
@@ -47,8 +46,10 @@ const mapDispatchToProps = (dispatch) => {
                 adminUserName: document.getElementById('input-with-team-admin').value,
                 adminPassword: document.getElementById('input-with-password').value
             };
-
             actions.addTeamMember(dispatch, data);
+        },
+        handleRemoveTeam: () => {
+            actions.removeTeam(dispatch);
         }
     }
 };

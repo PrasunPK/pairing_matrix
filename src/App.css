@@ -55,6 +55,7 @@
 
 .viewTeamDetail {
     text-align: left;
+    padding-left: 0.5rem;
 }
 
 .teamInfo, .addMember {
@@ -62,12 +63,13 @@
     padding: 1.5rem;
 }
 
-.addMemberBlock {
+.teamInfoWrapper {
     padding-left: 1rem;
 }
 
-.editTeamBlock {
-    margin-top: 2rem;
+.addMemberBlock {
+    padding-left: 1rem;
+    padding-top: 0.75rem;
 }
 
 .allTeamDetail {
@@ -89,4 +91,9 @@
 
 .promptHeading {
     text-align: left;
+}
+
+#remove-team-button {
+    margin-left: 14rem;
+    margin-top: 0.55rem;
 }

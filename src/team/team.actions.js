@@ -30,6 +30,7 @@ export const getTeamMembers = (dispatch) => {
         .post('http://localhost:8080/getAllMembers', {emailId: cookie.load('teamEmail')})
         .then((res) => {
             dispatch(saveTeamMemberDetail(res.data));
+            getTeamMembers(dispatch);
         })
         .catch(err => console.log(err));
 };
@@ -40,6 +41,11 @@ const teamDetailSaved = (team) => ({
     team: team
 });
 
+export const removeTeam = (dispatch) => {
+    cookie.remove('teamEmail');
+    dispatch(teamDetailSaved(undefined));
+};
+
 export const saveTeamDetail = (dispatch, team) => {
     return axios
         .post('http://localhost:8080/createTeam', team)
@@ -47,7 +53,6 @@ export const saveTeamDetail = (dispatch, team) => {
             if (res.status === 200) {
                 cookie.save('teamEmail', team.teamEmail);
                 dispatch(teamDetailSaved(team));
-                //    cookie.remove('userId', { path: '/' })
             }
         })
         .catch((err) => {

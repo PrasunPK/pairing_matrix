@@ -38,7 +38,7 @@ const matrixReducers = (state = defaultState(), action) => {
         case 'SAVE_TEAM_DETAIL':
             return {
                 ...state,
-                team: action.team || state.team
+                team: action.team
             };
 
         case 'SAVE_TEAM_MEMBER_DETAIL':
@@ -56,7 +56,7 @@ const matrixReducers = (state = defaultState(), action) => {
         case 'TEAM_VALUE_CHANGE':
             return {
                 ...state,
-                selectedTeam: action.selectedTeam || state.selectedTeam
+                selectedTeam: action.selectedTeam
             };
 
         default:

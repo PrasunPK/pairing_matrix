@@ -53,6 +53,7 @@ export const saveTeamDetail = (dispatch, team) => {
             if (res.status === 200) {
                 cookie.save('teamEmail', team.teamEmail);
                 dispatch(teamDetailSaved(team));
+                getTeamInformation(dispatch);
             }
         })
         .catch((err) => {

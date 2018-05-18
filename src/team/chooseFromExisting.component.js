@@ -43,7 +43,7 @@ class MultipleSelect extends React.Component {
                         </Select>
                     </FormControl>
                     <Button className="saveInfoButton" color="primary" variant="raised" size="medium"
-                            id="save-team-detail-button" onClick={handleExistingSave}>
+                            id="save-existing-team-button" onClick={handleExistingSave}>
                         <Save/>
                         Save
                     </Button>

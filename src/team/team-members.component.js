@@ -15,19 +15,19 @@ const TeamMembers = ({members}) => {
                         <TableCell>NAME</TableCell>
                         <TableCell>ID</TableCell>
                         <TableCell>EMAIL</TableCell>
-                        <TableCell>ACTIVE</TableCell>
+                        {/*<TableCell component="th">ACTIVE</TableCell>*/}
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {members && members.map((member, index) => {
                         return (
                             <TableRow key={index}>
-                                <TableCell component="th" scope="row">
+                                <TableCell scope="row">
                                     {member.memberName}
                                 </TableCell>
                                 <TableCell>{index}</TableCell>
                                 <TableCell>{member.memberEmail}</TableCell>
-                                <TableCell>{'Yes'}</TableCell>
+                                {/*<TableCell>{'Yes'}</TableCell>*/}
                             </TableRow>
                         );
                     })}

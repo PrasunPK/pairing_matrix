@@ -37,7 +37,7 @@
 }
 
 .teamInfoTextBox {
-    width: 20rem;
+    width: 25rem;
 }
 
 .inputInfo {
@@ -46,7 +46,7 @@
 
 .inputInfo > .saveInfoButton {
     float: right;
-    margin-left: 16.5rem;
+    margin-left: 21.8rem;
 }
 
 #save-team-detail-button {
@@ -61,10 +61,16 @@
     text-align: left;
     padding-left: 0.5rem;
 }
+.teamInfo {
+    margin-bottom: 1rem;
+    padding: 2rem 4rem;
+}
 
-.teamInfo, .addMember {
+.addMember {
     margin-bottom: 1rem;
     padding: 1.5rem;
+    align-items: center;
+    text-align: center;
 }
 
 .teamInfoWrapper {
@@ -98,6 +104,6 @@
 }
 
 #remove-team-button {
-    margin-left: 14rem;
+    margin-left: 11.5rem;
     margin-top: 0.55rem;
 }

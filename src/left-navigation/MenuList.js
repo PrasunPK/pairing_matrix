@@ -35,14 +35,6 @@ function SimpleList(props) {
                 </ListItem>
             </List>
             <Divider/>
-            <List component="nav">
-                <ListItem button>
-                    <ListItemText primary="Trash"/>
-                </ListItem>
-                <ListItem button component="a" href="#simple-list">
-                    <ListItemText primary="Spam"/>
-                </ListItem>
-            </List>
         </div>
     );
 }

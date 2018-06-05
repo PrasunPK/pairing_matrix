@@ -2,22 +2,23 @@ import React from 'react';
 import Grid from 'material-ui/Grid';
 
 import '../App.css';
-import members from "../data/members";
 import Row from "./Row";
 
 class Main extends React.Component {
     componentWillMount() {
-        const { fetchLatestState } = this.props;
+        const { fetchLatestState, fetchAllTeamMembers } = this.props;
         fetchLatestState();
+        fetchAllTeamMembers();
     }
 
     render() {
-        const {handleAddClick, handleMinusClick, pairs} = this.props;
+        const {handleAddClick, handleMinusClick, pairs, members} = this.props;
+        console.log("Members in Main: ", members);
         return (
             <Grid container className="main-content">
                 {
-                    members.map((member, pIndex) => (
-                        <Row pairs={pairs} pIndex={pIndex}
+                    members && members.map((member, pIndex) => (
+                        <Row pairs={pairs} pIndex={pIndex} members={members}
                              rowMember={member}
                              handleAddClick={handleAddClick}
                              handleMinusClick={handleMinusClick}/>

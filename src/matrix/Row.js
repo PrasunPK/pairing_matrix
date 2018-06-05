@@ -2,7 +2,6 @@ import React from 'react';
 import Grid from 'material-ui/Grid';
 
 import '../App.css';
-import members from "../data/members";
 import Cell from "./Cell";
 
 const getDaysCount = (pMember, cMember, pairs) => {
@@ -14,7 +13,7 @@ const getDaysCount = (pMember, cMember, pairs) => {
     return (pair && pair.length > 0) ? pair[0].days : 0;
 };
 
-const Row = ({rowMember, handleAddClick, handleMinusClick, pIndex, pairs}) => {
+const Row = ({rowMember, handleAddClick, handleMinusClick, pIndex, pairs, members}) => {
     return (
         <Grid container direction="row">
             {

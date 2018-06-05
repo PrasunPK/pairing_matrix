@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import TeamComponent from './team.component';
 import * as actions from "./team.actions";
-import {defaultState} from "../matrix/MainContainer";
+import {defaultState} from "../matrix/matrix.container";
 import cookie from 'react-cookies';
 
 const mapStateToProps = (state = defaultState()) => {

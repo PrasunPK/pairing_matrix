@@ -1,4 +1,4 @@
-import {defaultState} from "../matrix/MainContainer";
+import {defaultState} from "../matrix/matrix.container";
 import {isSamePair} from "../utils";
 
 const findAndUpdatePair = (state, pair) => {

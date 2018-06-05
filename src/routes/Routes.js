@@ -1,4 +1,4 @@
-import Matrix from "../matrix/Matrix";
+import Matrix from "../matrix/matrix.container";
 import {Route, Switch} from "react-router-dom";
 import React from "react";
 import Team from "../team/team.container";

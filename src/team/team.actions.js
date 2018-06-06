@@ -1,9 +1,9 @@
-import axios from 'axios';
+import { axiosInstance as axios } from '../axios-wrapper/axios.config';
 import cookie from 'react-cookies';
 
 export const addTeamMember = (dispatch, data) => {
     return axios
-        .post('http://localhost:8080/addMember', data)
+        .post('/addMember', data)
         .then((res) => {
             if (res.status === 200) {
                 getTeamMembers(dispatch);
@@ -27,7 +27,7 @@ const allTeamDetail = (teams) => ({
 
 export const getTeamMembers = (dispatch) => {
     return axios
-        .post('http://localhost:8080/getAllMembers', {emailId: cookie.load('teamEmail')})
+        .post('/getAllMembers', {emailId: cookie.load('teamEmail')})
         .then((res) => {
             dispatch(saveTeamMemberDetail(res.data));
             getTeamMembers(dispatch);
@@ -48,7 +48,7 @@ export const removeTeam = (dispatch) => {
 
 export const saveTeamDetail = (dispatch, team) => {
     return axios
-        .post('http://localhost:8080/createTeam', team)
+        .post('/createTeam', team)
         .then((res) => {
             if (res.status === 200) {
                 cookie.save('teamEmail', team.teamEmail);
@@ -62,7 +62,7 @@ export const saveTeamDetail = (dispatch, team) => {
 };
 
 export const getTeamInformation = (dispatch, teamEmail = cookie.load('teamEmail')) => {
-    return axios.get('http://localhost:8080/team/getAll')
+    return axios.get('/team/getAll')
         .then((res) => {
             dispatch(allTeamDetail(res.data.teams));
             const team = res.data.teams.filter(t => t.teamEmail === teamEmail)[0];

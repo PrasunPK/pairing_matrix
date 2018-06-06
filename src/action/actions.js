@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { axiosInstance as axios } from '../axios-wrapper/axios.config';
 
 export const dayIncreased = (dispatch, pair) => {
     savePairData(pair, dispatch, 'DAY_INCREASED');
@@ -16,7 +16,7 @@ export const fetchSuccessful = (dispatch, data) => {
 };
 
 export const getLatestSavedState = (dispatch) => {
-    axios.get('http://localhost:8080/pairingMatrix/getAll')
+    axios.get('/pairingMatrix/getAll')
         .then((res) => {
             fetchSuccessful(dispatch, res.data)
         })
@@ -24,7 +24,7 @@ export const getLatestSavedState = (dispatch) => {
 
 export const savePairData = (pair, dispatch, type) => {
     return axios
-        .post('http://localhost:8080/pairingMatrix/save',
+        .post('/pairingMatrix/save',
             {pairs: [pair]})
         .then((res) => {
             if (res.status === 200) {

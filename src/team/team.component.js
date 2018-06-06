@@ -1,6 +1,6 @@
 import React from "react";
-import EditTeam from './edit-team.component';
-import ViewTeam from './view-team.component';
+import EditTeam from './dumb-components/edit-team.component';
+import ViewTeam from './dumb-components/view-team.component';
 
 class TeamComponent extends React.Component {
     componentWillMount() {

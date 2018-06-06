@@ -14,7 +14,7 @@ const styles = theme => ({
     },
 });
 
-function SimpleList(props) {
+const SimpleList =  (props) => {
     const {classes} = props;
     return (
         <div className={classes.root}>
@@ -37,7 +37,7 @@ function SimpleList(props) {
             <Divider/>
         </div>
     );
-}
+};
 
 SimpleList.propTypes = {
     classes: PropTypes.object.isRequired,

@@ -12,7 +12,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import styles from "./styles";
 import MenuList from "./MenuList";
-import Routes from "../routes/Routes";
+import Routes from "../routes/routes";
 
 class MiniDrawer extends React.Component {
     state = {

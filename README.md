@@ -1,1 +1,1 @@
-Simple Pairing Matrix
+Simple Pairing MatrixComponent

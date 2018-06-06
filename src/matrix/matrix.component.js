@@ -3,9 +3,9 @@ import Grid from 'material-ui/Grid';
 import Paper from "material-ui/Paper";
 
 import '../App.css';
-import Main from "./Main";
+import Matrix from "./dumb-components/matrix";
 
-class Matrix extends React.Component {
+class MatrixComponent extends React.Component {
     componentWillMount() {
         const {fetchLatestState, fetchAllTeamMembers} = this.props;
         fetchLatestState();
@@ -35,12 +35,12 @@ class Matrix extends React.Component {
                             </Grid>
                         ))}
                     </Grid>
-                    <Main handleAddClick={handleAddClick}
-                          handleMinusClick={handleMinusClick}
-                          pairs={pairs} members={members}/>
+                    <Matrix handleAddClick={handleAddClick}
+                            handleMinusClick={handleMinusClick}
+                            pairs={pairs} members={members}/>
                 </Grid>
             </div>
         );
     };
 }
-export default Matrix;
+export default MatrixComponent;

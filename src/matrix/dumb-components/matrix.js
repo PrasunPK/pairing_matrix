@@ -1,10 +1,10 @@
 import React from 'react';
 import Grid from 'material-ui/Grid';
 
-import '../App.css';
-import Row from "./Row";
+import '../../App.css';
+import Row from "./row";
 
-const Main = ({handleAddClick, handleMinusClick, pairs, members}) => {
+const Matrix = ({handleAddClick, handleMinusClick, pairs, members}) => {
     return (
         <Grid container className="main-content">
             {
@@ -19,4 +19,4 @@ const Main = ({handleAddClick, handleMinusClick, pairs, members}) => {
     );
 };
 
-export default Main;
+export default Matrix;

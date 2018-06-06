@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import {dayDecreased, dayIncreased, getLatestSavedState} from "./matrix.actions";
 import {getTeamMembers} from "../team/team.actions";
-import Matrix from "./Matrix";
+import MatrixComponent from "./matrix.component";
 
 export const defaultState = () => {
     return {
@@ -44,6 +44,6 @@ const mapDispatchToProps = (dispatch) => {
 const MatrixContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(Matrix);
+)(MatrixComponent);
 
 export default MatrixContainer;

@@ -7,10 +7,10 @@ import cookie from 'react-cookies';
 const mapStateToProps = (state = defaultState()) => {
     return {
         ...state,
-        team: state.team,
-        teams: state.teams,
-        selectedTeam: state.selectedTeam,
-        members: state.members
+        team: state.teamReducers.team,
+        teams: state.teamReducers.teams,
+        selectedTeam: state.teamReducers.selectedTeam,
+        members: state.teamReducers.members
     }
 };
 

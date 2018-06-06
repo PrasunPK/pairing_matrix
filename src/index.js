@@ -5,11 +5,13 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-import reducers from './reducer/reducers'
+import {combineReducers, createStore} from 'redux';
+import teamReducers from './team/team.reducers'
+import matrixReducers from './matrix/matrix.reducers'
 import {BrowserRouter} from "react-router-dom";
 
-const store = createStore(reducers);
+const rootReducer = combineReducers({teamReducers, matrixReducers});
+const store = createStore(rootReducer);
 
 ReactDOM.render(
     <BrowserRouter>

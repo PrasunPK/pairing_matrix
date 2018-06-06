@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {dayDecreased, dayIncreased, getLatestSavedState} from "../action/actions";
+import {dayDecreased, dayIncreased, getLatestSavedState} from "./matrix.actions";
 import {getTeamMembers} from "../team/team.actions";
 import Matrix from "./Matrix";
 
@@ -15,7 +15,7 @@ export const defaultState = () => {
 const mapStateToProps = (state = defaultState()) => {
     return {
         ...state,
-        members: state.members
+        members: state.teamReducers.members
     }
 };
 

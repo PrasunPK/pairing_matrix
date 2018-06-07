@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'react-redux';
 import {combineReducers, createStore} from 'redux';
 import teamReducers from './team/team.reducers'
-import matrixReducers from './matrix/dumb-components/matrix.reducers'
+import matrixReducers from './matrix/matrix.reducers'
 import {BrowserRouter} from "react-router-dom";
 
 const rootReducer = combineReducers({teamReducers, matrixReducers});

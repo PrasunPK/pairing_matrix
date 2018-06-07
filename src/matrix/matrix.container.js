@@ -3,19 +3,11 @@ import {dayDecreased, dayIncreased, getLatestSavedState} from "./matrix.actions"
 import {getTeamMembers} from "../team/team.actions";
 import MatrixComponent from "./matrix.component";
 
-export const defaultState = () => {
-    return {
-        pairs: null,
-        count: 0,
-        team: null,
-        selectedTeam: []
-    }
-};
-
-const mapStateToProps = (state = defaultState()) => {
+const mapStateToProps = (state) => {
     return {
         ...state,
-        members: state.teamReducers.members
+        members: state.teamReducers.members,
+        pairs: state.matrixReducers.pairs
     }
 };
 

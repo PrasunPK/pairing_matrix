@@ -1,4 +1,10 @@
-import {defaultState} from "../matrix/matrix.container";
+const defaultState = () => {
+    return {
+        teams: [],
+        team: null,
+        selectedTeam: []
+    }
+};
 
 const teamReducers = (state = defaultState(), action) => {
     switch (action.type) {

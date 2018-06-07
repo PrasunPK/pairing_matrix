@@ -1,5 +1,10 @@
-import {defaultState} from "../matrix.container";
-import {isSamePair} from "../../utils";
+import {isSamePair} from "../utils";
+
+export const defaultState = () => {
+    return {
+        pairs: null
+    }
+};
 
 const findAndUpdatePair = (state, pair) => {
     if (!state.pairs.some(p => isSamePair(p, pair))) {
@@ -17,16 +22,15 @@ const matrixReducers = (state = defaultState(), action) => {
     switch (action.type) {
         case 'DAY_INCREASED':
             findAndUpdatePair(state, action.pair);
+            console.log({state});
             return {
-                ...state,
-                count: state.count + action.count
+                ...state
             };
 
         case 'DAY_DECREASED':
             findAndUpdatePair(state, action.pair);
             return {
-                ...state,
-                count: state.count - action.count
+                ...state
             };
 
         case 'FETCH_SUCCESSFUL':

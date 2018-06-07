@@ -7,8 +7,8 @@ import Cell from "./cell";
 const getDaysCount = (pMember, cMember, pairs) => {
     let pair = pairs && pairs
         .filter((p) => {
-            return (+p.pair1 === pMember.id && +p.pair2 === cMember.id)
-                || (+p.pair2 === pMember.id && +p.pair1 === cMember.id)
+            return (p.pair1 === pMember.memberId && p.pair2 === cMember.memberId)
+                || (p.pair2 === pMember.memberId && p.pair1 === cMember.memberId)
         });
     return (pair && pair.length > 0) ? pair[0].days : 0;
 };

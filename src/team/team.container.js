@@ -1,10 +1,9 @@
 import {connect} from "react-redux";
 import TeamComponent from './team.component';
 import * as actions from "./team.actions";
-import {defaultState} from "../matrix/matrix.container";
 import cookie from 'react-cookies';
 
-const mapStateToProps = (state = defaultState()) => {
+const mapStateToProps = (state) => {
     return {
         ...state,
         team: state.teamReducers.team,
@@ -40,6 +39,7 @@ const mapDispatchToProps = (dispatch) => {
         },
         handleAddMemberClick: () => {
             const data = {
+                memberId: document.getElementById("input-with-id").value,
                 memberName: document.getElementById("input-with-name").value,
                 memberEmail: document.getElementById("input-with-email").value,
                 teamEmail: cookie.load('teamEmail'),

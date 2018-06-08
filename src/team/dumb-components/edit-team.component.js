@@ -1,13 +1,11 @@
-import Grid from "material-ui/es/Grid/Grid";
 import Dashboard from "@material-ui/icons/es/Dashboard";
-import {Paper, TextField, Typography} from "material-ui";
 import React from "react";
 import Email from "@material-ui/icons/es/Email";
 import Person from "@material-ui/icons/es/Person";
 import Lock from "@material-ui/icons/es/Lock";
-import Button from "material-ui/es/Button/Button";
 import Save from "@material-ui/icons/es/Save";
 import ChooseFromExisting from "./chooseFromExisting.component"
+import {Button, Grid, Paper, TextField, Typography} from "@material-ui/core/es/index";
 
 const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam, handleExistingSave}) => {
     return (

@@ -1,5 +1,14 @@
 import React from "react";
-import {Button, FormControl, Grid, InputLabel, MenuItem, Paper, Select, Typography} from "material-ui";
+import {
+    Button,
+    FormControl,
+    Grid,
+    InputLabel,
+    MenuItem,
+    Paper,
+    Select,
+    Typography
+} from "@material-ui/core/es/index";
 import {Save} from "@material-ui/icons/es/index";
 
 const ITEM_HEIGHT = 48;

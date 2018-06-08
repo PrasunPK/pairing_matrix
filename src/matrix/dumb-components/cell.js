@@ -1,7 +1,5 @@
-import Grid from "material-ui/es/Grid/Grid";
-import Paper from "material-ui/es/Paper/Paper";
 import React from "react";
-import IconButton from "material-ui/es/IconButton/IconButton";
+import {Grid, IconButton, Paper} from "@material-ui/core/es/index";
 
 const Cell = ({rowMember, member, handleAddClick, handleMinusClick, count, pIndex, cIndex}) => {
     return (<Grid item>

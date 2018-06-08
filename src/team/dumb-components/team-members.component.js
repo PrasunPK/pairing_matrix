@@ -1,10 +1,5 @@
-import Paper from "material-ui/es/Paper/Paper";
-import Table from "material-ui/es/Table/Table";
-import TableHead from "material-ui/es/Table/TableHead";
-import TableRow from "material-ui/es/Table/TableRow";
 import React from "react";
-import TableCell from "material-ui/es/Table/TableCell";
-import TableBody from "material-ui/es/Table/TableBody";
+import {Paper, Table, TableBody, TableCell, TableHead, TableRow} from "@material-ui/core/es/index";
 
 const TeamMembers = ({members}) => {
     return (

@@ -1,8 +1,8 @@
 import React from 'react';
-import Grid from 'material-ui/Grid';
 
 import '../../App.css';
 import Row from "./row";
+import {Grid} from "@material-ui/core/es/index";
 
 const Matrix = ({handleAddClick, handleMinusClick, pairs, members}) => {
     return (

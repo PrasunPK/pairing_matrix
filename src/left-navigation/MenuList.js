@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withStyles} from 'material-ui/styles';
-import List, {ListItem, ListItemIcon, ListItemText} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
-import GridIcon from '@material-ui/icons/GridOn';
-import PeopleIcon from '@material-ui/icons/People';
+import {withStyles} from '@material-ui/core/styles';
+import {Divider, List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core/es/index";
+import PeopleIcon from "@material-ui/icons/People"
+import GridIcon from "@material-ui/icons/GridOn"
 
 const styles = theme => ({
     root: {
@@ -23,7 +22,6 @@ const SimpleList =  (props) => {
                     <ListItemIcon>
                         <GridIcon/>
                     </ListItemIcon>
-
                     <ListItemText primary="Matrix"/>
                 </ListItem>
 

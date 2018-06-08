@@ -1,11 +1,8 @@
 import React from "react";
-import Paper from "material-ui/es/Paper/Paper";
-import Grid from "material-ui/es/Grid/Grid";
-import {Button, TextField, Typography} from "material-ui";
 import Dashboard from "@material-ui/icons/es/Dashboard";
-import {Email, Lock, Person} from "@material-ui/icons/es/index";
-import Add from "@material-ui/icons/Add";
+import {Button, Grid, Paper, TextField, Typography} from "@material-ui/core/es/index";
 import PermIdentity from "@material-ui/icons/PermIdentity";
+import {Add, Email, Lock, Person} from "@material-ui/icons/es/index";
 
 
 const AddMember = ({handleAddMemberClick, teamName}) => {

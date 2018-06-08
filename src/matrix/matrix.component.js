@@ -1,9 +1,8 @@
 import React from 'react';
-import Grid from 'material-ui/Grid';
-import Paper from "material-ui/Paper";
 
 import '../App.css';
 import Matrix from "./dumb-components/matrix";
+import {Grid, Paper} from "@material-ui/core/es/index";
 
 class MatrixComponent extends React.Component {
     componentWillMount() {

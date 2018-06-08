@@ -1,11 +1,8 @@
 import React from "react";
-import Typography from "material-ui/es/Typography/Typography";
 import TeamMembers from "./team-members.component";
 import AddMember from "./add-member.component";
-import Grid from "material-ui/es/Grid/Grid";
-import Paper from "material-ui/es/Paper/Paper";
-import {Button} from "material-ui";
 import Delete from "@material-ui/icons/es/Delete";
+import {Button, Grid, Paper, Typography} from "@material-ui/core/es/index";
 
 const ViewTeam = ({team, members, handleAddMemberClick, handleRemoveTeam}) => {
     return (

@@ -30,7 +30,6 @@ export const getTeamMembers = (dispatch) => {
         .post('/getAllMembers', {emailId: cookie.load('teamEmail')})
         .then((res) => {
             dispatch(saveTeamMemberDetail(res.data));
-            getTeamMembers(dispatch);
         })
         .catch(err => console.log(err));
 };

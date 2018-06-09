@@ -22,7 +22,6 @@ const matrixReducers = (state = defaultState(), action) => {
     switch (action.type) {
         case 'DAY_INCREASED':
             findAndUpdatePair(state, action.pair);
-            console.log({state});
             return {
                 ...state
             };

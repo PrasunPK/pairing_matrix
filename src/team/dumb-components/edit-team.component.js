@@ -9,7 +9,7 @@ import {Button, Grid, Paper, TextField, Typography} from "@material-ui/core/es/i
 
 const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam, handleExistingSave}) => {
     return (
-        <Grid container direction="column">
+        <Grid container direction="column" className="contentWrapper">
             <ChooseFromExisting teams={teams} selectedTeam={selectedTeam} handleChange={handleChange}
                                 handleExistingSave={handleExistingSave}/>
             <Grid className="editTeamBlock">

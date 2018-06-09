@@ -25,7 +25,6 @@ const MenuProps = {
 class MultipleSelect extends React.Component {
     render() {
         const {teams, selectedTeam, handleChange, handleExistingSave} = this.props;
-
         return (
             <Grid className="existingTeams">
                 <Paper className="selectTeamFromExisting">

@@ -5,8 +5,8 @@
 }
 
 .mainContent {
-    margin-top: 4rem;
-    padding: 1rem;
+    margin-top: 3rem;
+    padding: 0.5rem;
     width: 100%;
     overflow: scroll;
 }
@@ -59,8 +59,8 @@
 
 .viewTeamDetail {
     text-align: left;
-    padding-left: 0.5rem;
 }
+
 .teamInfo {
     margin-bottom: 1rem;
     padding: 2rem 4rem;
@@ -74,11 +74,9 @@
 }
 
 .teamInfoWrapper {
-    padding-left: 1rem;
 }
 
 .addMemberBlock {
-    padding-left: 1rem;
     padding-top: 0.75rem;
 }
 
@@ -95,6 +93,14 @@
     min-width: 15rem;
 }
 
+.editTeamBlock {
+    margin-top: 1rem;
+}
+
+.contentWrapper {
+    width: 45% !important;
+}
+
 .selectTeamFromExisting {
     padding: 1.5rem 3.5rem 1.5rem 1.5rem;
 }
@@ -104,7 +110,7 @@
 }
 
 #remove-team-button {
-    margin-left: 11.5rem;
+    margin-left: 7rem;
     margin-top: 0.55rem;
 }
 

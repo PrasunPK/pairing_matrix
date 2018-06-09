@@ -20,7 +20,7 @@ const TeamMembers = ({members}) => {
                                 <TableCell scope="row">
                                     {member.memberName}
                                 </TableCell>
-                                <TableCell>{index}</TableCell>
+                                <TableCell>{member.memberId}</TableCell>
                                 <TableCell>{member.memberEmail}</TableCell>
                                 {/*<TableCell>{'Yes'}</TableCell>*/}
                             </TableRow>

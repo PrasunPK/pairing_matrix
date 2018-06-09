@@ -1,7 +1,6 @@
 import {connect} from "react-redux";
 import TeamComponent from './team.component';
 import * as actions from "./team.actions";
-import cookie from 'react-cookies';
 
 const mapStateToProps = (state) => {
     return {
@@ -42,7 +41,7 @@ const mapDispatchToProps = (dispatch) => {
                 memberId: document.getElementById("input-with-id").value,
                 memberName: document.getElementById("input-with-name").value,
                 memberEmail: document.getElementById("input-with-email").value,
-                teamEmail: cookie.load('teamEmail'),
+                teamEmail: localStorage.getItem('teamEmail'),
                 adminUserName: document.getElementById('input-with-team-admin').value,
                 adminPassword: document.getElementById('input-with-password').value
             };

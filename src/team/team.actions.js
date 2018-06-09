@@ -1,5 +1,4 @@
-import { axiosInstance as axios } from '../axios-wrapper/axios.config';
-import cookie from 'react-cookies';
+import {axiosInstance as axios} from '../axios-wrapper/axios.config';
 
 export const addTeamMember = (dispatch, data) => {
     return axios
@@ -27,7 +26,7 @@ const allTeamDetail = (teams) => ({
 
 export const getTeamMembers = (dispatch) => {
     return axios
-        .post('/getAllMembers', {emailId: cookie.load('teamEmail')})
+        .post('/getAllMembers', {emailId: localStorage.getItem('teamEmail')})
         .then((res) => {
             dispatch(saveTeamMemberDetail(res.data));
         })
@@ -41,7 +40,7 @@ const teamDetailSaved = (team) => ({
 });
 
 export const removeTeam = (dispatch) => {
-    cookie.remove('teamEmail');
+    localStorage.removeItem('teamEmail');
     dispatch(teamDetailSaved(undefined));
 };
 
@@ -50,7 +49,7 @@ export const saveTeamDetail = (dispatch, team) => {
         .post('/createTeam', team)
         .then((res) => {
             if (res.status === 200) {
-                cookie.save('teamEmail', team.teamEmail);
+                localStorage.setItem('teamEmail', team.teamEmail);
                 dispatch(teamDetailSaved(team));
                 getTeamInformation(dispatch);
             }
@@ -60,13 +59,13 @@ export const saveTeamDetail = (dispatch, team) => {
         });
 };
 
-export const getTeamInformation = (dispatch, teamEmail = cookie.load('teamEmail')) => {
+export const getTeamInformation = (dispatch, teamEmail = localStorage.getItem('teamEmail')) => {
     return axios.get('/team/getAll')
         .then((res) => {
             dispatch(allTeamDetail(res.data.teams));
             const team = res.data.teams.filter(t => t.teamEmail === teamEmail)[0];
             dispatch(teamDetailSaved(team));
-            cookie.save('teamEmail', team.teamEmail);
+            localStorage.setItem('teamEmail', team.teamEmail);
         })
         .catch((err) => {
             console.log(err);

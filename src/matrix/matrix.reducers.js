@@ -13,7 +13,7 @@ const findAndUpdatePair = (state, pair) => {
     }
     state.pairs.forEach(p => {
         if (isSamePair(p, pair)) {
-            p.days += pair.days;
+            p.days = parseInt(p.days) + parseInt(pair.days);
         }
     });
 };

@@ -17,10 +17,8 @@ const mapDispatchToProps = (dispatch) => {
         handleSaveClick: (e) => {
             const teamName = document.getElementById('input-with-team-name').value;
             const teamEmail = document.getElementById('input-with-team-email').value;
-            const adminUserName = document.getElementById('input-with-team-admin').value;
-            const adminPassword = document.getElementById('input-with-password').value;
 
-            actions.saveTeamDetail(dispatch, {teamName, teamEmail, adminUserName, adminPassword});
+            actions.saveTeamDetail(dispatch, {teamName, teamEmail});
         },
         fetchTeamInformation: () => {
             actions.getTeamInformation(dispatch);
@@ -42,9 +40,7 @@ const mapDispatchToProps = (dispatch) => {
                 memberId: document.getElementById("input-with-id").value,
                 memberName: document.getElementById("input-with-name").value,
                 memberEmail: document.getElementById("input-with-email").value,
-                teamEmail: localStorage.getItem('teamEmail'),
-                adminUserName: document.getElementById('input-with-team-admin').value,
-                adminPassword: document.getElementById('input-with-password').value
+                teamEmail: localStorage.getItem('teamEmail')
             };
             actions.addTeamMember(dispatch, data);
         },

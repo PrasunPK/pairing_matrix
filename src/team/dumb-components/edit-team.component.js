@@ -1,8 +1,6 @@
 import Dashboard from "@material-ui/icons/es/Dashboard";
 import React from "react";
 import Email from "@material-ui/icons/es/Email";
-import Person from "@material-ui/icons/es/Person";
-import Lock from "@material-ui/icons/es/Lock";
 import Save from "@material-ui/icons/es/Save";
 import ChooseFromExisting from "./chooseFromExisting.component"
 import {Button, Grid, Paper, TextField, Typography} from "@material-ui/core/es/index";
@@ -35,26 +33,6 @@ const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam, hand
                             <Grid item>
                                 <TextField className="teamInfoTextBox" type="email" id="input-with-team-email"
                                            label="Team email" defaultValue='' onChange={handleChange}/>
-                            </Grid>
-                        </Grid>
-
-                        <Grid container className="inputInfo" spacing={8} alignItems="flex-end">
-                            <Grid item>
-                                <Person/>
-                            </Grid>
-                            <Grid item>
-                                <TextField className="teamInfoTextBox" id="input-with-team-admin"
-                                           label="Admin" defaultValue='' onChange={handleChange}/>
-                            </Grid>
-                        </Grid>
-
-                        <Grid container className="inputInfo" spacing={8} alignItems="flex-end">
-                            <Grid item>
-                                <Lock/>
-                            </Grid>
-                            <Grid item>
-                                <TextField className="teamInfoTextBox" type="password" id="input-with-password"
-                                           label="Password" defaultValue='' onChange={handleChange}/>
                             </Grid>
                         </Grid>
 

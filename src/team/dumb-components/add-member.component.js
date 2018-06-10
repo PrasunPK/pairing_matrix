@@ -2,7 +2,7 @@ import React from "react";
 import Dashboard from "@material-ui/icons/es/Dashboard";
 import {Button, Grid, Paper, TextField, Typography} from "@material-ui/core/es/index";
 import PermIdentity from "@material-ui/icons/PermIdentity";
-import {Add, Email, Lock, Person} from "@material-ui/icons/es/index";
+import {Add, Email} from "@material-ui/icons/es/index";
 
 
 const AddMember = ({handleAddMemberClick, teamName}) => {
@@ -44,28 +44,6 @@ const AddMember = ({handleAddMemberClick, teamName}) => {
                             <Grid item>
                                 <TextField className="teamInfoTextBox" type="email" id="input-with-id"
                                            label="Id" defaultValue='' onChange={() => {
-                                }}/>
-                            </Grid>
-                        </Grid>
-
-                        <Grid container className="inputInfo" spacing={8} alignItems="flex-end">
-                            <Grid item>
-                                <Person/>
-                            </Grid>
-                            <Grid item>
-                                <TextField className="teamInfoTextBox" id="input-with-team-admin"
-                                           label="Admin" defaultValue='' onChange={() => {
-                                }}/>
-                            </Grid>
-                        </Grid>
-
-                        <Grid container className="inputInfo" spacing={8} alignItems="flex-end">
-                            <Grid item>
-                                <Lock/>
-                            </Grid>
-                            <Grid item>
-                                <TextField className="teamInfoTextBox" type="password" id="input-with-password"
-                                           label="Password" defaultValue='' onChange={() => {
                                 }}/>
                             </Grid>
                         </Grid>

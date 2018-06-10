@@ -1,4 +1,4 @@
-import { axiosInstance as axios } from '../axios-wrapper/axios.config';
+import {axiosInstance as axios} from '../axios-wrapper/axios.config';
 
 export const dayIncreased = (dispatch, pair) => {
     savePairData(pair, dispatch, 'DAY_INCREASED');
@@ -16,16 +16,18 @@ export const fetchSuccessful = (dispatch, data) => {
 };
 
 export const getLatestSavedState = (dispatch) => {
-    axios.get('/pairingMatrix/getAll')
+    let teamEmail = localStorage.getItem('teamEmail');
+    axios.get(`/pairingMatrix/v2/get?teamEmail=${teamEmail}`)
         .then((res) => {
             fetchSuccessful(dispatch, res.data)
         })
 };
 
 export const savePairData = (pair, dispatch, type) => {
+    let teamEmail = localStorage.getItem('teamEmail');
     return axios
         .post('/pairingMatrix/save',
-            {pairs: [pair]})
+            {pairs: [pair], teamEmail})
         .then((res) => {
             if (res.status === 200) {
                 return dispatch({

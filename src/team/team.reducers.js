@@ -2,7 +2,8 @@ const defaultState = () => {
     return {
         teams: [],
         team: null,
-        selectedTeam: []
+        selectedTeam: [],
+        members: []
     }
 };
 

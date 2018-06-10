@@ -24,9 +24,9 @@ const allTeamDetail = (teams) => ({
     teams: teams
 });
 
-export const getTeamMembers = (dispatch) => {
+export const getTeamMembers = (dispatch, emailId = localStorage.getItem('teamEmail')) => {
     return axios
-        .post('/getAllMembers', {emailId: localStorage.getItem('teamEmail')})
+        .post('/getAllMembers', {emailId})
         .then((res) => {
             dispatch(saveTeamMemberDetail(res.data));
         })

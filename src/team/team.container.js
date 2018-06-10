@@ -35,6 +35,7 @@ const mapDispatchToProps = (dispatch) => {
         handleExistingSave: () => {
             const selectedTeamEmail = document.getElementById('selected-preferred-team').value;
             actions.getTeamInformation(dispatch, selectedTeamEmail);
+            actions.getTeamMembers(dispatch, selectedTeamEmail);
         },
         handleAddMemberClick: () => {
             const data = {

@@ -9,8 +9,13 @@ const mapStateToProps = (state) => {
         teams: state.teamReducers.teams,
         selectedTeam: state.teamReducers.selectedTeam,
         members: state.teamReducers.members,
-        error: state.teamReducers.error
+        error: state.teamReducers.error,
+        success: state.teamReducers.success
     }
+};
+
+const clearFields = (fields) => {
+    fields.forEach(f => document.getElementById(f).value = "");
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -23,12 +28,13 @@ const mapDispatchToProps = (dispatch) => {
                 return;
             }
             actions.saveTeamDetail(dispatch, {teamName, teamEmail});
+            clearFields(['input-with-team-name', 'input-with-team-email']);
         },
         fetchTeamInformation: () => {
             actions.getTeamInformation(dispatch);
             actions.getTeamMembers(dispatch);
         },
-        handleChange: (e) => {
+        handleTeamChange: (e) => {
             dispatch({
                 type: 'TEAM_VALUE_CHANGE',
                 selectedTeam: e.target.value
@@ -53,6 +59,7 @@ const mapDispatchToProps = (dispatch) => {
                 }
             ;
             actions.addTeamMember(dispatch, data);
+            clearFields(['input-with-id', 'input-with-name', 'input-with-email']);
         },
         handleRemoveTeam: () => {
             actions.removeTeam(dispatch);

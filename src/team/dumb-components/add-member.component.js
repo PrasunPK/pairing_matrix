@@ -8,8 +8,7 @@ const belongsToCurrentComponent = (error) => {
     return error && error.context === "add_member";
 };
 
-const AddMember = ({handleAddMemberClick, teamName, error}) => {
-
+const AddMember = ({handleAddMemberClick, teamName, error, success}) => {
     return (
         <Grid item xs>
             <Paper className="addMember">
@@ -50,7 +49,7 @@ const AddMember = ({handleAddMemberClick, teamName, error}) => {
                                 <PermIdentity/>
                             </Grid>
                             <Grid item>
-                                <TextField required className="teamInfoTextBox" type="email" id="input-with-id"
+                                <TextField required className="teamInfoTextBox" id="input-with-id"
                                            label="Id" defaultValue='' onChange={() => {
                                 }}/>
                             </Grid>

@@ -7,6 +7,7 @@ export const addTeamMember = (dispatch, data) => {
             if (res.status === 200) {
                 getTeamMembers(dispatch);
                 dispatch({type: "CLEAR_ERROR_STATE"});
+                dispatch({type: "REQUEST_SUCCESSFUL", context: "add_member"});
             }
         })
         .catch((err) => {

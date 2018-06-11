@@ -8,10 +8,10 @@ import {Button, FormHelperText, Grid, Paper, TextField, Typography} from "@mater
 const belongsToCurrentComponent = (error) => {
     return error && error.context === "add_team";
 };
-const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam, handleExistingSave, error}) => {
+const EditComponent = ({handleTeamChange, handleSaveClick, teams, selectedTeam, handleExistingSave, error, success}) => {
     return (
         <Grid container direction="column" className="contentWrapper">
-            <ChooseFromExisting teams={teams} selectedTeam={selectedTeam} handleChange={handleChange}
+            <ChooseFromExisting teams={teams} selectedTeam={selectedTeam} handleTeamChange={handleTeamChange}
                                 handleExistingSave={handleExistingSave}/>
             <Grid className="editTeamBlock">
                 <Paper className="allTeamDetail">
@@ -28,7 +28,8 @@ const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam, hand
                             </Grid>
                             <Grid item>
                                 <TextField required className="teamInfoTextBox" id="input-with-team-name"
-                                           label="Team name" defaultValue='' onChange={handleChange}/>
+                                           label="Team name" defaultValue="" onChange={() => {
+                                }}/>
                             </Grid>
                         </Grid>
 
@@ -38,7 +39,8 @@ const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam, hand
                             </Grid>
                             <Grid item>
                                 <TextField required className="teamInfoTextBox" type="email" id="input-with-team-email"
-                                           label="Team email" defaultValue='' onChange={handleChange}/>
+                                           label="Team email" defaultValue='' onChange={() => {
+                                }}/>
                             </Grid>
                         </Grid>
 

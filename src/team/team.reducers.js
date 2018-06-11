@@ -4,7 +4,8 @@ const defaultState = () => {
         team: null,
         selectedTeam: [],
         members: [],
-        error: null
+        error: null,
+        success: null
     }
 };
 
@@ -47,6 +48,15 @@ const teamReducers = (state = defaultState(), action) => {
             return {
                 ...state,
                 error: null
+            };
+
+        case 'REQUEST_SUCCESSFUL':
+            return {
+                ...state,
+                success: {
+                    message: "Your request was successful",
+                    context: action.context
+                }
             };
 
         default:

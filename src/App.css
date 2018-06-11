@@ -94,10 +94,6 @@
     min-width: 15rem;
 }
 
-.editTeamBlock {
-    margin-top: 1rem;
-}
-
 .contentWrapper {
     width: 45% !important;
 }
@@ -117,4 +113,9 @@
 
 .App .MiniDrawer-root-1 {
     height: auto;
+}
+
+#add-member-error-text {
+    color: #ff2c2c;
+    text-align: center;
 }

@@ -1,11 +1,11 @@
 import React from "react";
 import Dashboard from "@material-ui/icons/es/Dashboard";
-import {Button, Grid, Paper, TextField, Typography} from "@material-ui/core/es/index";
+import {Button, FormHelperText, Grid, Paper, TextField, Typography} from "@material-ui/core/es/index";
 import PermIdentity from "@material-ui/icons/PermIdentity";
 import {Add, Email} from "@material-ui/icons/es/index";
 
 
-const AddMember = ({handleAddMemberClick, teamName}) => {
+const AddMember = ({handleAddMemberClick, teamName, errorMessage}) => {
 
     return (
         <Grid item xs>
@@ -13,14 +13,17 @@ const AddMember = ({handleAddMemberClick, teamName}) => {
                 <Typography variant="subheading" component="label">
                     Add Member for Team {teamName}
                 </Typography>
+
+                <FormHelperText id="add-member-error-text">{errorMessage}</FormHelperText>
+
                 <Grid className="editTeamBlock">
-                    <form noValidate autoComplete="off">
+                    <form autoComplete="off">
                         <Grid container className="inputInfo" spacing={8} alignItems="flex-end">
                             <Grid item>
                                 <Dashboard/>
                             </Grid>
                             <Grid item>
-                                <TextField className="teamInfoTextBox" id="input-with-name"
+                                <TextField required className="teamInfoTextBox" id="input-with-name"
                                            label="Name" defaultValue='' onChange={() => {
                                 }}/>
                             </Grid>
@@ -31,7 +34,7 @@ const AddMember = ({handleAddMemberClick, teamName}) => {
                                 <Email/>
                             </Grid>
                             <Grid item>
-                                <TextField className="teamInfoTextBox" type="email" id="input-with-email"
+                                <TextField required className="teamInfoTextBox" type="email" id="input-with-email"
                                            label="Email" defaultValue='' onChange={() => {
                                 }}/>
                             </Grid>
@@ -42,7 +45,7 @@ const AddMember = ({handleAddMemberClick, teamName}) => {
                                 <PermIdentity/>
                             </Grid>
                             <Grid item>
-                                <TextField className="teamInfoTextBox" type="email" id="input-with-id"
+                                <TextField required className="teamInfoTextBox" type="email" id="input-with-id"
                                            label="Id" defaultValue='' onChange={() => {
                                 }}/>
                             </Grid>

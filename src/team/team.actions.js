@@ -6,6 +6,7 @@ export const addTeamMember = (dispatch, data) => {
         .then((res) => {
             if (res.status === 200) {
                 getTeamMembers(dispatch);
+                dispatch({type: "CLEAR_ERROR_STATE"});
             }
         })
         .catch((err) => {

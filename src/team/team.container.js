@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
         team: state.teamReducers.team,
         teams: state.teamReducers.teams,
         selectedTeam: state.teamReducers.selectedTeam,
-        members: state.teamReducers.members
+        members: state.teamReducers.members,
+        errorMessage: state.teamReducers.errorMessage
     }
 };
 
@@ -36,12 +37,18 @@ const mapDispatchToProps = (dispatch) => {
             actions.getTeamMembers(dispatch, selectedTeamEmail);
         },
         handleAddMemberClick: () => {
+            const memberId = document.getElementById("input-with-id").value;
+            const memberName = document.getElementById("input-with-name").value;
+            const memberEmail = document.getElementById("input-with-email").value;
+            if (!memberId || !memberName || !memberEmail) {
+                dispatch({type: "FIELD_VALIDATION_FAILED", component: "add_member"});
+                return;
+            }
             const data = {
-                memberId: document.getElementById("input-with-id").value,
-                memberName: document.getElementById("input-with-name").value,
-                memberEmail: document.getElementById("input-with-email").value,
-                teamEmail: localStorage.getItem('teamEmail')
-            };
+                    memberId, memberName, memberEmail,
+                    teamEmail: localStorage.getItem('teamEmail')
+                }
+            ;
             actions.addTeamMember(dispatch, data);
         },
         handleRemoveTeam: () => {

@@ -3,7 +3,8 @@ const defaultState = () => {
         teams: [],
         team: null,
         selectedTeam: [],
-        members: []
+        members: [],
+        errorMessage: null
     }
 };
 
@@ -31,6 +32,20 @@ const teamReducers = (state = defaultState(), action) => {
             return {
                 ...state,
                 selectedTeam: action.selectedTeam
+            };
+
+        case 'FIELD_VALIDATION_FAILED':
+            return {
+                ...state,
+                componentName: action.component,
+                errorMessage: "Fields must not be empty"
+            };
+
+        case 'CLEAR_ERROR_STATE':
+            return {
+                ...state,
+                componentName: null,
+                errorMessage: null
             };
 
         default:

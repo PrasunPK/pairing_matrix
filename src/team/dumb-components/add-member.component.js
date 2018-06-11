@@ -4,8 +4,11 @@ import {Button, FormHelperText, Grid, Paper, TextField, Typography} from "@mater
 import PermIdentity from "@material-ui/icons/PermIdentity";
 import {Add, Email} from "@material-ui/icons/es/index";
 
+const belongsToCurrentComponent = (error) => {
+    return error && error.context === "add_member";
+};
 
-const AddMember = ({handleAddMemberClick, teamName, errorMessage}) => {
+const AddMember = ({handleAddMemberClick, teamName, error}) => {
 
     return (
         <Grid item xs>
@@ -14,7 +17,9 @@ const AddMember = ({handleAddMemberClick, teamName, errorMessage}) => {
                     Add Member for Team {teamName}
                 </Typography>
 
-                <FormHelperText id="add-member-error-text">{errorMessage}</FormHelperText>
+                <FormHelperText id="add-member-error-text" className="errorText">
+                    {belongsToCurrentComponent(error) && error.message}
+                </FormHelperText>
 
                 <Grid className="editTeamBlock">
                     <form autoComplete="off">

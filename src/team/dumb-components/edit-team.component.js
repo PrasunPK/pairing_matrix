@@ -3,9 +3,12 @@ import React from "react";
 import Email from "@material-ui/icons/es/Email";
 import Save from "@material-ui/icons/es/Save";
 import ChooseFromExisting from "./chooseFromExisting.component"
-import {Button, Grid, Paper, TextField, Typography} from "@material-ui/core/es/index";
+import {Button, FormHelperText, Grid, Paper, TextField, Typography} from "@material-ui/core/es/index";
 
-const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam, handleExistingSave, errorMessage}) => {
+const belongsToCurrentComponent = (error) => {
+    return error && error.context === "add_team";
+};
+const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam, handleExistingSave, error}) => {
     return (
         <Grid container direction="column" className="contentWrapper">
             <ChooseFromExisting teams={teams} selectedTeam={selectedTeam} handleChange={handleChange}
@@ -15,13 +18,16 @@ const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam, hand
                     <Typography variant="subheading" component="label">
                         Create new team
                     </Typography>
+                    <FormHelperText id="add-team-error-text" className="errorText">
+                        {belongsToCurrentComponent(error) && error.message}
+                    </FormHelperText>
                     <form noValidate autoComplete="off">
                         <Grid container className="inputInfo" spacing={8} alignItems="flex-end">
                             <Grid item>
                                 <Dashboard/>
                             </Grid>
                             <Grid item>
-                                <TextField className="teamInfoTextBox" id="input-with-team-name"
+                                <TextField required className="teamInfoTextBox" id="input-with-team-name"
                                            label="Team name" defaultValue='' onChange={handleChange}/>
                             </Grid>
                         </Grid>
@@ -31,7 +37,7 @@ const EditComponent = ({handleChange, handleSaveClick, teams, selectedTeam, hand
                                 <Email/>
                             </Grid>
                             <Grid item>
-                                <TextField className="teamInfoTextBox" type="email" id="input-with-team-email"
+                                <TextField required className="teamInfoTextBox" type="email" id="input-with-team-email"
                                            label="Team email" defaultValue='' onChange={handleChange}/>
                             </Grid>
                         </Grid>

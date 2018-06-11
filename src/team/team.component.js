@@ -12,15 +12,15 @@ class TeamComponent extends React.Component {
         const {
             handleChange, handleSaveClick, teams, team, selectedTeam,
             handleExistingSave, members, handleAddMemberClick, handleRemoveTeam,
-            errorMessage
+            error
         } = this.props;
         let view = null;
         if (!team) {
             view = <EditTeam handleSaveClick={handleSaveClick} handleChange={handleChange} teams={teams}
-                             selectedTeam={selectedTeam} handleExistingSave={handleExistingSave} />;
+                             selectedTeam={selectedTeam} handleExistingSave={handleExistingSave} error={error}/>;
         } else {
             view = <ViewTeam team={team} members={members} handleRemoveTeam={handleRemoveTeam}
-                             handleAddMemberClick={handleAddMemberClick} errorMessage={errorMessage}/>;
+                             handleAddMemberClick={handleAddMemberClick} error={error}/>;
         }
         return (
             <div className="mainContent">

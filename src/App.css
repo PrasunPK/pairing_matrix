@@ -115,7 +115,7 @@
     height: auto;
 }
 
-#add-member-error-text {
+.editTeamBlock .errorText, .addMemberBlock .errorText {
     color: #ff2c2c;
     text-align: center;
 }

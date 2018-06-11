@@ -4,7 +4,7 @@ import AddMember from "./add-member.component";
 import Delete from "@material-ui/icons/es/Delete";
 import {Button, Grid, Paper, Typography} from "@material-ui/core/es/index";
 
-const ViewTeam = ({team, members, handleAddMemberClick, handleRemoveTeam, errorMessage}) => {
+const ViewTeam = ({team, members, handleAddMemberClick, handleRemoveTeam, error}) => {
     return (
         <div className="viewTeamDetail">
             <Grid container spacing={24} direction="row">
@@ -32,7 +32,7 @@ const ViewTeam = ({team, members, handleAddMemberClick, handleRemoveTeam, errorM
                     </Grid>
                     <Grid item xs className="addMemberBlock">
                         <AddMember teamName={team && team.teamName}
-                                   handleAddMemberClick={handleAddMemberClick} errorMessage={errorMessage}/>
+                                   handleAddMemberClick={handleAddMemberClick} error={error}/>
                     </Grid>
                 </Grid>
                 <Grid className="addMemberBlock">

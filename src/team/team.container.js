@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
         teams: state.teamReducers.teams,
         selectedTeam: state.teamReducers.selectedTeam,
         members: state.teamReducers.members,
-        errorMessage: state.teamReducers.errorMessage
+        error: state.teamReducers.error
     }
 };
 
@@ -18,7 +18,10 @@ const mapDispatchToProps = (dispatch) => {
         handleSaveClick: (e) => {
             const teamName = document.getElementById('input-with-team-name').value;
             const teamEmail = document.getElementById('input-with-team-email').value;
-
+            if (!teamName || !teamEmail) {
+                dispatch({type: "FIELD_VALIDATION_FAILED", context: "add_team"});
+                return;
+            }
             actions.saveTeamDetail(dispatch, {teamName, teamEmail});
         },
         fetchTeamInformation: () => {
@@ -41,7 +44,7 @@ const mapDispatchToProps = (dispatch) => {
             const memberName = document.getElementById("input-with-name").value;
             const memberEmail = document.getElementById("input-with-email").value;
             if (!memberId || !memberName || !memberEmail) {
-                dispatch({type: "FIELD_VALIDATION_FAILED", component: "add_member"});
+                dispatch({type: "FIELD_VALIDATION_FAILED", context: "add_member"});
                 return;
             }
             const data = {

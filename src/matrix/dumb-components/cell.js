@@ -1,5 +1,6 @@
 import React from "react";
 import {Grid, IconButton, Paper} from "@material-ui/core/es/index";
+import Avatar from "@material-ui/core/es/Avatar/Avatar";
 
 const Cell = ({rowMember, member, handleAddClick, handleMinusClick, count, pIndex, cIndex}) => {
     return (
@@ -11,9 +12,12 @@ const Cell = ({rowMember, member, handleAddClick, handleMinusClick, count, pInde
                         paddingBottom: 9,
                         height: 33, width: 80
                     }}>
-                        <div>
+                        <React.Fragment>
                             <div className="pair-value" id={`${rowMember.memberId}_${member.memberId}_value`}>
                                 {count > 0 ? count : 0}
+                                <Avatar className={`pair-marker alert${count > 7 ? 'Exceed' : count}`}
+                                        id={`${rowMember.memberId}_${member.memberId}_avatar`}>
+                                </Avatar>
                             </div>
                             <div className="fab-action-icons">
                                 <IconButton className="fab-action-button add-button"
@@ -27,7 +31,7 @@ const Cell = ({rowMember, member, handleAddClick, handleMinusClick, count, pInde
                                     -
                                 </IconButton>
                             </div>
-                        </div>
+                        </React.Fragment>
                     </Paper> :
                     <Paper style={{
                         paddingTop: 20,

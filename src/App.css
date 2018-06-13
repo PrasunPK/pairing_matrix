@@ -17,10 +17,26 @@
     position: absolute;
 }
 
+.main-content .fab-action-icons {
+    margin: -32px auto;
+}
+
 .main-content .pair-value {
-    margin-top: -8px;
+    margin: -12px auto;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 22px;
+}
+
+.main-content .pair-marker {
+    left: -3px;
+    top: -43px;
+    border-radius: 0;
+
+    transform: rotate(45deg);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
 }
 
 .main-content .fab-action-button {
@@ -118,4 +134,36 @@
 .editTeamBlock .errorText, .addMemberBlock .errorText {
     color: #ff2c2c;
     text-align: center;
+}
+
+.alert1 {
+    border-right: 15px solid #FFEBEE;
+}
+
+.alert2 {
+    border-right: 15px solid #FFCDD2;
+}
+
+.alert3 {
+    border-right: 15px solid #EF9A9A;
+}
+
+.alert4 {
+    border-right: 15px solid #E57373;
+}
+
+.alert5 {
+    border-right: 15px solid #EF5350;
+}
+
+.alert6 {
+    border-right: 15px solid #F44336;
+}
+
+.alert7 {
+    border-right: 15px solid #E53935;
+}
+
+.alertExceed {
+    border-right: 15px solid #D32F2F;
 }

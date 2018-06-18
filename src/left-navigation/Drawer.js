@@ -4,9 +4,6 @@ import classNames from 'classnames';
 import {withStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MenuList from "./MenuList";
 import Routes from "../routes/routes";
 import RichAppBar from "./RichAppBar";
@@ -79,34 +76,19 @@ const styles = theme => ({
 });
 
 class MiniDrawer extends React.Component {
-    state = {
-        open: false,
-    };
-
-    handleDrawerOpen = () => {
-        this.setState({ open: true });
-    };
-
-    handleDrawerClose = () => {
-        this.setState({ open: false });
-    };
 
     render() {
-        const { classes, theme } = this.props;
+        const { classes } = this.props;
         return (
             <div className={classes.root}>
                 <RichAppBar classes={classes}/>
                 <Drawer
                     variant="permanent"
                     classes={{
-                        paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose),
+                        paper: classNames(classes.drawerPaper, classes.drawerPaperClose),
                     }}
-                    open={this.state.open}
                 >
                     <div className={classes.toolbar}>
-                        <IconButton onClick={this.handleDrawerClose}>
-                            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                        </IconButton>
                     </div>
                     <MenuList/>
                     <Divider />

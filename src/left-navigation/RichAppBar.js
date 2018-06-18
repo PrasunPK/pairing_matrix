@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import MenuIcon from '@material-ui/icons/Menu';
-import {AppBar, IconButton, Toolbar, Typography} from "@material-ui/core/es/index";
+import {AppBar, IconButton, LinearProgress, Toolbar, Typography} from "@material-ui/core/es/index";
 import React from "react";
 
 const RichAppBar = ({classes, team}) => {
@@ -17,8 +17,14 @@ const RichAppBar = ({classes, team}) => {
                 >
                     <MenuIcon/>
                 </IconButton>
-                <Typography variant="title" color="inherit" noWrap>
-                    Team { team && team.teamName }
+                <Typography variant="title" color="inherit" className="appBarTeamName" noWrap>
+                    {
+                        !team
+                            ? <div className="loader">
+                                <LinearProgress className="standardProgress"/>
+                            </div>
+                            : `Team ${team.teamName}`
+                    }
                 </Typography>
             </Toolbar>
         </AppBar>)

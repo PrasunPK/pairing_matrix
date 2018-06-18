@@ -167,3 +167,12 @@
 .alertExceed {
     border-right: 15px solid #D32F2F;
 }
+
+.appBarTeamName .standardProgress {
+    height: 12px;
+    background-color: #5C6BC0;
+}
+
+.appBarTeamName .loader {
+    width: 10rem;
+}

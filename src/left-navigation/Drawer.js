@@ -6,7 +6,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 import MenuList from "./MenuList";
 import Routes from "../routes/routes";
-import RichAppBar from "./RichAppBar";
+import AppBar from "./rich-app-bar.container";
 
 const drawerWidth = 240;
 
@@ -81,7 +81,7 @@ class MiniDrawer extends React.Component {
         const { classes } = this.props;
         return (
             <div className={classes.root}>
-                <RichAppBar classes={classes}/>
+                <AppBar classes={classes}/>
                 <Drawer
                     variant="permanent"
                     classes={{

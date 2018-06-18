@@ -3,7 +3,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {AppBar, IconButton, Toolbar, Typography} from "@material-ui/core/es/index";
 import React from "react";
 
-const RichAppBar = ({classes}) => {
+const RichAppBar = ({classes, team}) => {
     return (
         <AppBar
             position="absolute"
@@ -18,7 +18,7 @@ const RichAppBar = ({classes}) => {
                     <MenuIcon/>
                 </IconButton>
                 <Typography variant="title" color="inherit" noWrap>
-                    Pairing Matrix
+                    Team { team && team.teamName }
                 </Typography>
             </Toolbar>
         </AppBar>)

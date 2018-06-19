@@ -176,3 +176,7 @@
 .appBarTeamName .loader {
     width: 10rem;
 }
+
+#anchor-matrix-tooltip, #anchor-team-tooltip {
+    position: absolute;
+}

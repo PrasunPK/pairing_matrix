@@ -20,7 +20,7 @@ const SimpleList = (props) => {
             <List component="nav">
                 <ListItem button component="a" href="/matrix">
                     <ListItemIcon>
-                        <Tooltip id="anchor-matrix-tooltip" title="Matrix" placement="top">
+                        <Tooltip id="anchor-matrix-tooltip" title="Matrix" placement="right-start">
                             <GridIcon/>
                         </Tooltip>
                     </ListItemIcon>
@@ -28,7 +28,7 @@ const SimpleList = (props) => {
 
                 <ListItem button component="a" href="/team">
                     <ListItemIcon>
-                        <Tooltip id="anchor-team-tooltip" title="Team" placement="top">
+                        <Tooltip id="anchor-team-tooltip" title="Team" placement="right-start">
                             <PeopleIcon/>
                         </Tooltip>
                     </ListItemIcon>

@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
 import AppBarComponent from "./app-bar.component";
+import {getTeamInformation} from "../team/team.actions";
 
 const mapStateToProps = (state) => {
     return {
@@ -10,6 +11,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        fetchTeamInformation: () => {
+            getTeamInformation(dispatch);
+        }
     }
 };
 

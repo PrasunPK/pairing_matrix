@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import AppBar from "./left-navigation/rich-app-bar.container";
+import AppBar from "./left-navigation/app-bar.container";
 import MenuList from "./left-navigation/menu.component";
 import Routes from "./routes/routes";
 
@@ -11,8 +11,8 @@ class App extends Component {
                 <AppBar/>
                 <div className="decoratedLeftNav">
                     <MenuList/>
-                    <Routes/>
                 </div>
+                <Routes/>
             </div>
         );
     }

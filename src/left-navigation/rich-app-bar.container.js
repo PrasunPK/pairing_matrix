@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import RichAppBar from "./RichAppBar";
+import AppBarComponent from "./app-bar.component";
 
 const mapStateToProps = (state) => {
     return {
@@ -16,6 +16,6 @@ const mapDispatchToProps = (dispatch) => {
 const AppBar = connect(
     mapStateToProps,
     mapDispatchToProps
-)(RichAppBar);
+)(AppBarComponent);
 
 export default AppBar;

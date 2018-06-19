@@ -1,19 +1,14 @@
-import classNames from "classnames";
 import MenuIcon from '@material-ui/icons/Menu';
 import {AppBar, IconButton, LinearProgress, Toolbar, Typography} from "@material-ui/core/es/index";
 import React from "react";
 
-const RichAppBar = ({classes, team}) => {
+export default ({classes, team}) => {
     return (
-        <AppBar
-            position="absolute"
-            className={classNames(classes.appBar)}
-        >
+        <AppBar position="absolute">
             <Toolbar disableGutters={true}>
                 <IconButton
                     color="inherit"
                     aria-label="open drawer"
-                    className={classNames(classes.menuButton)}
                 >
                     <MenuIcon/>
                 </IconButton>
@@ -29,5 +24,3 @@ const RichAppBar = ({classes, team}) => {
             </Toolbar>
         </AppBar>)
 };
-
-export default RichAppBar;

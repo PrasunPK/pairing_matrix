@@ -208,3 +208,20 @@ h2.appBarTeamName {
 .notificationCorner > span {
     display: inline-flex;
 }
+
+.homeContent {
+    padding-left: 15rem;
+    padding-top: 2.5rem;
+}
+.homeContent .description a {
+    color: #002984;
+    text-decoration: none;
+}
+
+.homeContent .description a:hover {
+    color: #3151B5;
+    text-decoration: underline;
+}
+.homeContent .description {
+    margin-top: 2.5rem;
+}

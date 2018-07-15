@@ -28,7 +28,7 @@ export default class extends React.Component {
                     </Typography>
                     <div className="notificationCorner">
                         <Typography variant="caption" color="inherit" noWrap>
-                            {lastUpdatedTime ? `Last updated at: ${moment(lastUpdatedTime).format('DD-MM-YYYY HH:MM:SS')}` : ''}
+                            {lastUpdatedTime ? `Last updated at: ${moment(lastUpdatedTime).format('DD-MM-YYYY HH:mm:ss')}` : ''}
                         </Typography>
                         <IconButton
                             aria-haspopup="true"

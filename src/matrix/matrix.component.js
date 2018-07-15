@@ -19,7 +19,7 @@ class MatrixComponent extends React.Component {
                     <Grid container direction="row">
                         {[{memberName: 'PI', id: 9}].concat(members).map(value => (
                             <Grid item>
-                                <Paper style={{paddingTop: 25, paddingBottom: 10, height: 35, width: 80}}>
+                                <Paper className="ellipsis" style={{paddingTop: 25, paddingBottom: 10, height: 35, width: 80}}>
                                     {value && value.memberName}
                                 </Paper>
                             </Grid>
@@ -28,7 +28,7 @@ class MatrixComponent extends React.Component {
                     <Grid container direction="column">
                         {members && members.map(value => (
                             <Grid item>
-                                <Paper style={{paddingTop: 20, paddingBottom: 9, height: 33, width: 80}}>
+                                <Paper className="ellipsis" style={{paddingTop: 20, paddingBottom: 9, height: 33, width: 80}}>
                                     {value && value.memberName}
                                 </Paper>
                             </Grid>

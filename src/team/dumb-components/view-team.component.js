@@ -35,7 +35,7 @@ const ViewTeam = ({team, members, handleAddMemberClick, handleRemoveTeam, error,
                                    handleAddMemberClick={handleAddMemberClick} error={error} success={success}/>
                     </Grid>
                 </Grid>
-                <Grid className="addMemberBlock">
+                <Grid className="allMemberBlock">
                     <TeamMembers members={members}/>
                 </Grid>
 

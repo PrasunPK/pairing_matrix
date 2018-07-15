@@ -88,11 +88,13 @@
     text-align: center;
 }
 
-.teamInfoWrapper {
-}
-
 .addMemberBlock {
     padding-top: 0.75rem;
+}
+
+.allMemberBlock {
+    padding-top: 0.75rem;
+    width: 44rem;
 }
 
 .allTeamDetail {
@@ -213,6 +215,7 @@ h2.appBarTeamName {
     padding-left: 15rem;
     padding-top: 2.5rem;
 }
+
 .homeContent .description a {
     color: #002984;
     text-decoration: none;
@@ -222,6 +225,13 @@ h2.appBarTeamName {
     color: #3151B5;
     text-decoration: underline;
 }
+
 .homeContent .description {
     margin-top: 2.5rem;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }

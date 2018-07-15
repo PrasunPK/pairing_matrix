@@ -62,14 +62,17 @@ export const saveTeamDetail = (dispatch, team) => {
 };
 
 export const getTeamInformation = (dispatch, teamEmail = localStorage.getItem('teamEmail')) => {
+    dispatch({type: 'IS_LOADING', loading: true});
     return axios.get('/team/getAll')
         .then((res) => {
             dispatch(allTeamDetail(res.data.teams));
             const team = res.data.teams.filter(t => t.teamEmail === teamEmail)[0];
             dispatch(teamDetailSaved(team));
             localStorage.setItem('teamEmail', team.teamEmail);
+            dispatch({type: 'IS_LOADING', loading: false});
         })
         .catch((err) => {
+            dispatch({type: 'IS_LOADING', loading: false});
             console.log(err);
         })
 };

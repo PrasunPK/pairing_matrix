@@ -5,7 +5,8 @@ import {getTeamInformation} from "../team/team.actions";
 const mapStateToProps = (state) => {
     return {
         ...state,
-        team: state.teamReducers.team
+        team: state.teamReducers.team,
+        isLoading: state.teamReducers.isLoading
     }
 };
 

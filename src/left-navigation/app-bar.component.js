@@ -8,8 +8,8 @@ export default class extends React.Component {
         fetchTeamInformation();
     }
 
-    render(){
-        const {team} = this.props;
+    render() {
+        const {team, isLoading} = this.props;
         return (
             <AppBar position="absolute">
                 <Toolbar disableGutters={true}>
@@ -21,11 +21,13 @@ export default class extends React.Component {
                     </IconButton>
                     <Typography variant="title" color="inherit" className="appBarTeamName" noWrap>
                         {
-                            !team
+                            isLoading
                                 ? <div className="loader">
                                     <LinearProgress className="standardProgress"/>
                                 </div>
-                                : `Team ${team.teamName}`
+                                : team
+                                ? `Team ${team.teamName}`
+                                : `Welcome`
                         }
                     </Typography>
                 </Toolbar>

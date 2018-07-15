@@ -1,5 +1,4 @@
-import MenuIcon from '@material-ui/icons/Menu';
-import {AppBar, IconButton, LinearProgress, Toolbar, Typography} from "@material-ui/core/es/index";
+import {AppBar, LinearProgress, Toolbar, Typography} from "@material-ui/core/es/index";
 import React from "react";
 
 export default class extends React.Component {
@@ -13,12 +12,6 @@ export default class extends React.Component {
         return (
             <AppBar position="absolute">
                 <Toolbar disableGutters={true}>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                    >
-                        <MenuIcon className="menuIcon"/>
-                    </IconButton>
                     <Typography variant="title" color="inherit" className="appBarTeamName" noWrap>
                         {
                             isLoading

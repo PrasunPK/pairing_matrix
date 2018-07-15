@@ -1,6 +1,7 @@
 import React from "react";
 import EditTeam from './dumb-components/edit-team.component';
 import ViewTeam from './dumb-components/view-team.component';
+import TeamLoading from './dumb-components/team-loading.component';
 
 class TeamComponent extends React.Component {
     componentWillMount() {
@@ -24,6 +25,8 @@ class TeamComponent extends React.Component {
                 view = <ViewTeam team={team} members={members} handleRemoveTeam={handleRemoveTeam}
                                  handleAddMemberClick={handleAddMemberClick} error={error} success={success}/>;
             }
+        } else {
+            view = <TeamLoading/>;
         }
         return (
             <div className="mainContent">

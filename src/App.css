@@ -173,6 +173,20 @@
     background-color: #5C6BC0;
 }
 
+.allTeamDetail .otherStandardProgress {
+    height: 12px;
+    background-color: #ECEFF169;
+}
+
+.allMemberBlockLoading .otherStandardProgress {
+    height: 12px;
+    background-color: #ECEFF169;
+}
+
+.otherStandardProgress .MuiLinearProgress-barColorPrimary-201, .otherStandardProgress .MuiLinearProgress-barColorPrimary-269 {
+    background-color: #CFD8DC1F;
+}
+
 h2.appBarTeamName {
     margin-left: 2rem;
 }
@@ -234,4 +248,23 @@ h2.appBarTeamName {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.loadingTeam {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.loadingCreateMember {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.addMemberLoader {
+    margin-top: 1.5rem;
+    padding: 4rem 3rem;
+}
+
+.allMemberBlockLoading {
+    margin-left: 1rem;
 }

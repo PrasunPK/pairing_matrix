@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
     return {
         ...state,
         members: state.teamReducers.members,
-        pairs: state.matrixReducers.pairs
+        pairs: state.matrixReducers.pairs,
+        isLoading: state.matrixReducers.isLoading
     }
 };
 
@@ -28,6 +29,7 @@ const mapDispatchToProps = (dispatch) => {
         },
 
         fetchLatestState: () => {
+            dispatch({type: 'IS_LOADING', loading: true});
             getLatestSavedState(dispatch);
         }
     }

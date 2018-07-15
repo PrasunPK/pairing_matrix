@@ -44,6 +44,12 @@ const matrixReducers = (state = defaultState(), action) => {
                 lastUpdatedTime: action.lastUpdatedTime
             };
 
+        case 'IS_LOADING':
+            return {
+                ...state,
+                isLoading: action.loading
+            };
+
         default:
             return {
                 ...state

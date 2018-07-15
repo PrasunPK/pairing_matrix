@@ -187,6 +187,17 @@
     background-color: #CFD8DC1F;
 }
 
+.mainContent .matrixStandardProgress {
+    height: 15px;
+    background-color: #ECEFF169;
+    width: 3rem;
+    margin-left: 1rem;
+}
+
+.matrixStandardProgress .MuiLinearProgress-bar-200{
+    background-color: #CFD8DC1F;
+}
+
 h2.appBarTeamName {
     margin-left: 2rem;
 }

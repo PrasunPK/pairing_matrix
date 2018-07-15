@@ -31,8 +31,13 @@ export const getTeamMembers = (dispatch, emailId = localStorage.getItem('teamEma
         .post('/getAllMembers', {emailId})
         .then((res) => {
             dispatch(saveTeamMemberDetail(res.data));
+            dispatch({type: 'IS_LOADING', loading: false});
+
         })
-        .catch(err => console.log(err));
+        .catch((err) => {
+            dispatch({type: 'IS_LOADING', loading: false});
+            console.log(err)
+        });
 };
 
 

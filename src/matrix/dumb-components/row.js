@@ -15,11 +15,11 @@ const getDaysCount = (pMember, cMember, pairs) => {
 
 const Row = ({rowMember, handleAddClick, handleMinusClick, pIndex, pairs, members}) => {
     return (
-        <Grid container direction="row">
+        <Grid container key={`${pIndex}Row`} direction="row">
             {
                 members.map((member, cIndex) => {
                     return (
-                        <Cell rowMember={rowMember} member={member}
+                        <Cell key={`${cIndex}CellWrapper`} rowMember={rowMember} member={member}
                               handleAddClick={handleAddClick}
                               handleMinusClick={handleMinusClick}
                               count={getDaysCount(rowMember, member, pairs)}

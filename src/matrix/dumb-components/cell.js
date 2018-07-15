@@ -4,7 +4,7 @@ import Avatar from "@material-ui/core/es/Avatar/Avatar";
 
 const Cell = ({rowMember, member, handleAddClick, handleMinusClick, count, pIndex, cIndex}) => {
     return (
-        <Grid item>
+        <Grid key={`${cIndex}${pIndex}Cell`} item>
             {
                 cIndex <= pIndex ?
                     <Paper style={{

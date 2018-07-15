@@ -1,6 +1,7 @@
 import {connect} from "react-redux";
 import TeamComponent from './team.component';
 import * as actions from "./team.actions";
+import {getLastUpdatedTime} from "../matrix/matrix.actions";
 
 const mapStateToProps = (state) => {
     return {
@@ -44,6 +45,7 @@ const mapDispatchToProps = (dispatch) => {
             const selectedTeamEmail = document.getElementById('selected-preferred-team').value;
             actions.getTeamInformation(dispatch, selectedTeamEmail);
             actions.getTeamMembers(dispatch, selectedTeamEmail);
+            getLastUpdatedTime(dispatch);
         },
         handleAddMemberClick: () => {
             const memberId = document.getElementById("input-with-id").value;
@@ -63,6 +65,7 @@ const mapDispatchToProps = (dispatch) => {
         },
         handleRemoveTeam: () => {
             actions.removeTeam(dispatch);
+            getLastUpdatedTime(dispatch);
         }
     }
 };

@@ -17,7 +17,7 @@ export default class extends React.Component {
                         color="inherit"
                         aria-label="open drawer"
                     >
-                        <MenuIcon/>
+                        <MenuIcon className="menuIcon"/>
                     </IconButton>
                     <Typography variant="title" color="inherit" className="appBarTeamName" noWrap>
                         {

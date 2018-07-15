@@ -42,4 +42,5 @@ class MatrixComponent extends React.Component {
         );
     };
 }
+
 export default MatrixComponent;

@@ -5,7 +5,7 @@
 }
 
 .mainContent {
-    margin-top: 3rem;
+    margin-top: 4rem;
     padding: 0.5rem;
     width: 100%;
 }
@@ -164,4 +164,38 @@
 
 .alertExceed {
     border-right: 15px solid #D32F2F;
+}
+
+.appBarTeamName .standardProgress {
+    height: 12px;
+    background-color: #5C6BC0;
+}
+
+h2.appBarTeamName{
+    margin-left: 2rem;
+}
+
+.appBarTeamName .loader {
+    width: 10rem;
+}
+
+#anchor-matrix-tooltip, #anchor-team-tooltip {
+    position: absolute;
+}
+
+.decoratedLeftNav {
+    z-index: 1;
+    display: flex;
+}
+
+.App .leftNav {
+    margin-top: 2rem;
+}
+
+.editTeamBlock, .existingTeams {
+    min-width: 35rem;
+}
+
+.menuIcon {
+    padding-left: 1.5rem;
 }

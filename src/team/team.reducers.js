@@ -59,6 +59,12 @@ const teamReducers = (state = defaultState(), action) => {
                 }
             };
 
+        case 'IS_LOADING':
+            return {
+                ...state,
+                isLoading: action.loading
+            };
+
         default:
             return {
                 ...state

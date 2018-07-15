@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
         selectedTeam: state.teamReducers.selectedTeam,
         members: state.teamReducers.members,
         error: state.teamReducers.error,
-        success: state.teamReducers.success
+        success: state.teamReducers.success,
+        isLoading: state.teamReducers.isLoading
     }
 };
 

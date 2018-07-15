@@ -44,14 +44,15 @@ export const savePairData = (pair, dispatch, type) => {
 
 export const getLastUpdatedTime = (dispatch) => {
     let teamEmail = localStorage.getItem('teamEmail');
-    axios.get(`/pairingMatrix/v2/get/last-updated-time?teamEmail=${teamEmail}`)
-        .then((res) => {
-            return dispatch({
-                type: "SAVE_LAST_UPDATED_TIME",
-                lastUpdatedTime : res.data
+    return teamEmail &&
+        axios.get(`/pairingMatrix/v2/get/last-updated-time?teamEmail=${teamEmail}`)
+            .then((res) => {
+                return dispatch({
+                    type: "SAVE_LAST_UPDATED_TIME",
+                    lastUpdatedTime: res.data
+                });
+            })
+            .catch((err) => {
+                console.log(err);
             });
-        })
-        .catch((err) => {
-            console.log(err);
-        });
 };

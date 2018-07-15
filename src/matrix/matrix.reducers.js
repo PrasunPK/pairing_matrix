@@ -38,6 +38,12 @@ const matrixReducers = (state = defaultState(), action) => {
                 pairs: action.pairs
             };
 
+        case 'SAVE_LAST_UPDATED_TIME':
+            return {
+                ...state,
+                lastUpdatedTime: action.lastUpdatedTime
+            };
+
         default:
             return {
                 ...state

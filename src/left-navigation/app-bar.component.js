@@ -1,14 +1,17 @@
-import {AppBar, LinearProgress, Toolbar, Typography} from "@material-ui/core/es/index";
+import {AppBar, IconButton, LinearProgress, Toolbar, Typography} from "@material-ui/core/es/index";
 import React from "react";
+import Notifications from "@material-ui/icons/es/Notifications";
+import moment from 'moment';
 
 export default class extends React.Component {
     componentDidMount() {
-        const {fetchTeamInformation} = this.props;
+        const {fetchTeamInformation, fetchLastUpdatedTime} = this.props;
         fetchTeamInformation();
+        fetchLastUpdatedTime();
     }
 
     render() {
-        const {team, isLoading} = this.props;
+        const {team, isLoading, lastUpdatedTime} = this.props;
         return (
             <AppBar position="absolute">
                 <Toolbar disableGutters={true}>
@@ -23,6 +26,17 @@ export default class extends React.Component {
                                 : `Welcome`
                         }
                     </Typography>
+                    <div className="notificationCorner">
+                        <Typography variant="caption" color="inherit" noWrap>
+                            Last updated at: {lastUpdatedTime ? moment(lastUpdatedTime).format('MM-DD-YYYY HH:MM:SS') : ''}
+                        </Typography>
+                        <IconButton
+                            aria-haspopup="true"
+                            color="inherit"
+                        >
+                            <Notifications/>
+                        </IconButton>
+                    </div>
                 </Toolbar>
             </AppBar>)
     }

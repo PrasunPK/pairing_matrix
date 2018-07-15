@@ -171,7 +171,7 @@
     background-color: #5C6BC0;
 }
 
-h2.appBarTeamName{
+h2.appBarTeamName {
     margin-left: 2rem;
 }
 
@@ -198,4 +198,13 @@ h2.appBarTeamName{
 
 .menuIcon {
     padding-left: 1.5rem;
+}
+
+.notificationCorner {
+    flex-grow: 1;
+    text-align: end;
+}
+
+.notificationCorner > span {
+    display: inline-flex;
 }

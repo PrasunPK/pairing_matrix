@@ -3,7 +3,7 @@ import React from "react";
 
 export default () => {
     return (
-        <Grid container spacing={16} direction="row">
+        <Grid container spacing={16} direction="row" className="loaderContentWrapper">
             <Grid className="teamInfoWrapper editTeamBlock">
                 <Paper className="allTeamDetail">
                     <div className="loadingTeam">
@@ -11,7 +11,7 @@ export default () => {
                     </div>
                 </Paper>
 
-                <Paper className="allTeamDetail addMemberLoader">
+                <Paper className="addMemberLoader">
                     <div className="loadingTeam">
                         <LinearProgress className="otherStandardProgress"/>
                     </div>

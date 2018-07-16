@@ -173,17 +173,12 @@
     background-color: #5C6BC0;
 }
 
-.allTeamDetail .otherStandardProgress {
+.loaderContentWrapper .otherStandardProgress {
     height: 12px;
     background-color: #ECEFF169;
 }
 
-.allMemberBlockLoading .otherStandardProgress {
-    height: 12px;
-    background-color: #ECEFF169;
-}
-
-.otherStandardProgress .MuiLinearProgress-barColorPrimary-201, .otherStandardProgress .MuiLinearProgress-barColorPrimary-269 {
+.loaderContentWrapper .otherStandardProgress > div {
     background-color: #CFD8DC1F;
 }
 
@@ -194,7 +189,7 @@
     margin-left: 1rem;
 }
 
-.matrixStandardProgress .MuiLinearProgress-bar-200{
+.matrixStandardProgress > div {
     background-color: #CFD8DC1F;
 }
 

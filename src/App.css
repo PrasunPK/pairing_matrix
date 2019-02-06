@@ -137,35 +137,43 @@
 }
 
 .alert1 {
-    border-right: 15px solid #FFEBEE;
+    border-right: 15px solid #08f143;
 }
 
 .alert2 {
-    border-right: 15px solid #FFCDD2;
+    border-right: 15px solid #53df65;
 }
 
 .alert3 {
-    border-right: 15px solid #EF9A9A;
+    border-right: 15px solid #8ee299;
 }
 
 .alert4 {
-    border-right: 15px solid #E57373;
+    border-right: 15px solid #0895e7;
 }
 
 .alert5 {
-    border-right: 15px solid #EF5350;
+    border-right: 15px solid #087be7;
 }
 
 .alert6 {
-    border-right: 15px solid #F44336;
+    border-right: 15px solid #083ce7;
 }
 
 .alert7 {
-    border-right: 15px solid #E53935;
+    border-right: 15px solid #7b08e7;
 }
 
-.alertExceed {
-    border-right: 15px solid #D32F2F;
+.alert8 {
+    border-right: 15px solid #e708e7;
+}
+
+.alert9 {
+    border-right: 15px solid #e7084b;
+}
+
+.alert10 {
+    border-right: 15px solid #e70808;
 }
 
 .appBarTeamName .standardProgress {

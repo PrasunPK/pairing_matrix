@@ -2,7 +2,7 @@ import React from "react";
 import {Grid, IconButton, Paper} from "@material-ui/core/es/index";
 import Avatar from "@material-ui/core/es/Avatar/Avatar";
 
-const Cell = ({rowMember, member, handleAddClick, handleMinusClick, count, pIndex, cIndex}) => {
+const Cell = ({rowMember, member, handleAddClick, handleMinusClick, count, normDays, pIndex, cIndex}) => {
     return (
         <Grid key={`${cIndex}${pIndex}Cell`} item>
             {
@@ -15,7 +15,7 @@ const Cell = ({rowMember, member, handleAddClick, handleMinusClick, count, pInde
                         <React.Fragment>
                             <div className="pair-value" id={`${rowMember.memberId}_${member.memberId}_value`}>
                                 {count > 0 ? count : 0}
-                                <Avatar className={`pair-marker alert${count > 7 ? 'Exceed' : count}`}
+                                <Avatar className={`pair-marker alert${normDays}`}
                                         id={`${rowMember.memberId}_${member.memberId}_avatar`}>
                                 </Avatar>
                             </div>
@@ -27,7 +27,7 @@ const Cell = ({rowMember, member, handleAddClick, handleMinusClick, count, pInde
                                 </IconButton>
                                 <IconButton className="fab-action-button minus-button"
                                             id={`${rowMember.memberId}_${member.memberId}_minus`}
-                                            onClick={handleMinusClick}>
+                                            onClick={handleMinusClick} disabled={count <= 0}>
                                     -
                                 </IconButton>
                             </div>
